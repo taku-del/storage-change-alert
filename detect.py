@@ -2,7 +2,10 @@
 ストレージ使用量の変化検知スクリプト
 
 Tableau Cloud の usage_statistics から直近データを取得し、
-前週比で大きな変化があった顧客を検出 → Slack投稿。
+前週比で大きな変化があった顧客を検出。
+
+結果は results/latest.json に保存し、GitHub Actions がコミット。
+Slack投稿は Claude Remote Trigger が MCP 経由で行う。
 
 検出カテゴリ:
   1. 高使用率帯で急増: 既に80%以上 かつ 使用率+5pt以上 かつ 変化量20GB以上
@@ -10,7 +13,6 @@ Tableau Cloud の usage_statistics から直近データを取得し、
 
 環境変数:
   TABLEAU_PAT_SECRET  — Tableau Cloud PAT
-  SLACK_BOT_TOKEN     — Slack Bot Token (chat:write スコープ)
 """
 
 import json
@@ -18,10 +20,10 @@ import os
 import sys
 import zipfile
 import tempfile
+from pathlib import Path
 from datetime import datetime, timedelta
 
 import pandas as pd
-import requests
 import tableauserverclient as TSC
 import pantab
 
@@ -31,10 +33,7 @@ SITE_NAME = "directcloud"
 TOKEN_NAME = "claude-api"
 TOKEN_SECRET = os.environ.get("TABLEAU_PAT_SECRET", "")
 
-# ── Slack 設定 ──
-SLACK_BOT_TOKEN = os.environ.get("SLACK_BOT_TOKEN", "")
-SLACK_CHANNEL_SURGE = "C09MLT5LGRW"    # 高使用率帯で急増
-SLACK_CHANNEL_CHURN = "C0AKQD8GVSR"    # 解約リスク
+RESULTS_DIR = Path(__file__).parent / "results"
 
 # ── 検出閾値 ──
 CHANGE_GB_MIN = 20
@@ -238,25 +237,6 @@ def format_churn_message(result: dict) -> str:
     return "\n".join(lines)
 
 
-def post_to_slack(channel: str, text: str):
-    """Slack Bot Token で投稿"""
-    if not SLACK_BOT_TOKEN:
-        print(f"[Slack] SLACK_BOT_TOKEN 未設定 — スキップ ({channel})")
-        print(text)
-        return
-
-    resp = requests.post(
-        "https://slack.com/api/chat.postMessage",
-        headers={"Authorization": f"Bearer {SLACK_BOT_TOKEN}"},
-        json={"channel": channel, "text": text},
-    )
-    data = resp.json()
-    if data.get("ok"):
-        print(f"[Slack] 投稿成功: {channel}")
-    else:
-        print(f"[Slack] 投稿失敗: {channel} — {data.get('error')}", file=sys.stderr)
-
-
 def main():
     usage, account = download_extract()
     company_map = build_company_map(account)
@@ -267,12 +247,19 @@ def main():
     print(f"\n高使用率帯で急増: {surge_count} 件")
     print(f"解約リスク:       {churn_count} 件")
 
-    # チャンネル別に投稿
-    surge_msg = format_surge_message(result)
-    churn_msg = format_churn_message(result)
+    # Slack用メッセージを生成
+    result["slack_messages"] = {
+        "surge": format_surge_message(result),
+        "churn_risk": format_churn_message(result),
+    }
 
-    post_to_slack(SLACK_CHANNEL_SURGE, surge_msg)
-    post_to_slack(SLACK_CHANNEL_CHURN, churn_msg)
+    # 結果保存
+    RESULTS_DIR.mkdir(exist_ok=True)
+    out_path = RESULTS_DIR / "latest.json"
+    with open(out_path, "w", encoding="utf-8") as f:
+        json.dump(result, f, ensure_ascii=False, indent=2)
+
+    print(f"[保存] {out_path}")
 
 
 if __name__ == "__main__":
