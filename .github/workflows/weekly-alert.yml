@@ -1,0 +1,28 @@
+name: Weekly Storage Change Alert
+
+on:
+  schedule:
+    # 毎週月曜 10:00 JST (= 日曜 01:00 UTC)
+    - cron: '0 1 * * 1'
+  workflow_dispatch: # 手動実行用
+
+jobs:
+  detect-and-notify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Run detection
+        env:
+          TABLEAU_PAT_SECRET: ${{ secrets.TABLEAU_PAT_SECRET }}
+          SLACK_BOT_TOKEN: ${{ secrets.SLACK_BOT_TOKEN }}
+        run: python detect.py

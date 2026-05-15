@@ -1,0 +1,6 @@
+results/
+*.twbx
+*.twb
+*.hyper
+__pycache__/
+*.pyc
