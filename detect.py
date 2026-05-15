@@ -44,6 +44,9 @@ DROP_RATE_MIN = 50
 LOOKBACK_DAYS = 7
 SLACK_DISPLAY_MAX = 10
 
+SF_BASE_URL = "https://directcloud.my.salesforce.com"
+TABLEAU_DASHBOARD_URL = "https://prod-apnortheast-a.online.tableau.com/#/site/directcloud/workbooks/4220352"
+
 
 def download_extract():
     """Tableau Cloud から usage_statistics + Account をダウンロード"""
@@ -83,6 +86,7 @@ def download_extract():
 def build_company_map(account: pd.DataFrame) -> dict:
     cols = {
         "ID__c": "company_id",
+        "Id": "sf_account_id",
         "Name": "account_name",
         "contractplan__c": "contract_plan",
         "Agency__c": "agency",
@@ -138,8 +142,10 @@ def detect_changes(usage: pd.DataFrame, company_map: dict) -> dict:
         change_pct = round(rate_now - rate_prev, 1)
 
         info = company_map.get(str(cid), {})
+        sf_id = info.get("sf_account_id", "")
         entry = {
             "company_id": str(cid),
+            "sf_account_id": sf_id,
             "name": info.get("account_name", str(cid)),
             "plan": info.get("contract_plan", ""),
             "agency": info.get("agency", ""),
@@ -173,6 +179,13 @@ def detect_changes(usage: pd.DataFrame, company_map: dict) -> dict:
     }
 
 
+def _sf_link(name: str, sf_id: str) -> str:
+    """企業名をSalesforceリンク付きで返す"""
+    if sf_id:
+        return f"<{SF_BASE_URL}/{sf_id}|{name}>"
+    return name
+
+
 def format_surge_message(result: dict) -> str:
     alerts = result["alerts"]["surge"]
     latest = result["latest_date"]
@@ -195,8 +208,9 @@ def format_surge_message(result: dict) -> str:
         "",
     ]
     for a in alerts[:SLACK_DISPLAY_MAX]:
+        name_link = _sf_link(a["name"], a.get("sf_account_id", ""))
         lines.append(
-            f"  • *{a['name']}* — +{a['change_gb']}GB / "
+            f"  • *{name_link}* — +{a['change_gb']}GB / "
             f"+{a['change_pct']}pt ({a['rate_prev']}% → {a['rate_now']}%)  "
             f"[{a['storage_used_gb']}/{a['volume_size_gb']}GB]"
         )
@@ -227,13 +241,16 @@ def format_churn_message(result: dict) -> str:
         "",
     ]
     for a in alerts[:SLACK_DISPLAY_MAX]:
+        name_link = _sf_link(a["name"], a.get("sf_account_id", ""))
         lines.append(
-            f"  • *{a['name']}* — {a['change_gb']}GB / "
+            f"  • *{name_link}* — {a['change_gb']}GB / "
             f"{a['change_pct']}pt ({a['rate_prev']}% → {a['rate_now']}%)  "
             f"[{a['storage_used_gb']}/{a['volume_size_gb']}GB]"
         )
     if count > SLACK_DISPLAY_MAX:
         lines.append(f"  … 他 {count - SLACK_DISPLAY_MAX} 件")
+    lines.append("")
+    lines.append(f":bar_chart: <{TABLEAU_DASHBOARD_URL}|Tableauダッシュボードで詳細確認>")
     return "\n".join(lines)
 
 
