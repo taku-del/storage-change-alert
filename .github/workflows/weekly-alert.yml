@@ -24,15 +24,33 @@ jobs:
       - name: Install dependencies
         run: pip install -r requirements.txt
 
+      - name: Check secret is set
+        env:
+          TABLEAU_PAT_SECRET: ${{ secrets.TABLEAU_PAT_SECRET }}
+        run: |
+          if [ -z "$TABLEAU_PAT_SECRET" ]; then
+            echo "::error::TABLEAU_PAT_SECRET is not set"
+            exit 1
+          fi
+          echo "TABLEAU_PAT_SECRET is set (length: ${#TABLEAU_PAT_SECRET})"
+
       - name: Run detection
         env:
           TABLEAU_PAT_SECRET: ${{ secrets.TABLEAU_PAT_SECRET }}
         run: python detect.py
+
+      - name: Verify results
+        run: |
+          if [ ! -f results/latest.json ]; then
+            echo "::error::results/latest.json was not created"
+            exit 1
+          fi
+          echo "Results file exists:"
+          cat results/latest.json | python -m json.tool | head -20
 
       - name: Commit results
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add -f results/latest.json
-          git diff --cached --quiet || git commit -m "Update alert results $(date -u +%Y-%m-%d)"
-          git push
+          git diff --cached --quiet && echo "No changes to commit" || (git commit -m "Update alert results $(date -u +%Y-%m-%d)" && git push)
