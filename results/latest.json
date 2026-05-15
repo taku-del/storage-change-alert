@@ -1,0 +1,88 @@
+{
+  "latest_date": "2026-05-14",
+  "compare_date": "2026-05-07",
+  "alerts": {
+    "surge": [
+      {
+        "company_id": "kitomac",
+        "name": "鬼頭工業株式会社",
+        "plan": "スタンダードプラン",
+        "agency": "0012w00000HZdqzAAD",
+        "storage_used_gb": 549.9,
+        "volume_size_gb": 600.0,
+        "rate_now": 91.6,
+        "rate_prev": 81.4,
+        "change_gb": 61.25,
+        "change_pct": 10.2
+      },
+      {
+        "company_id": "cadnet",
+        "name": "cadnet",
+        "plan": "",
+        "agency": "",
+        "storage_used_gb": 464.29,
+        "volume_size_gb": 500.0,
+        "rate_now": 92.9,
+        "rate_prev": 87.2,
+        "change_gb": 28.17,
+        "change_pct": 5.7
+      }
+    ],
+    "churn_risk": [
+      {
+        "company_id": "brzwwngz",
+        "name": "株式会社J-POWERビジネスサービス",
+        "plan": "アドバンスドプラン",
+        "agency": "",
+        "storage_used_gb": 559.17,
+        "volume_size_gb": 1024.0,
+        "rate_now": 54.6,
+        "rate_prev": 90.8,
+        "change_gb": -370.84,
+        "change_pct": -36.2
+      },
+      {
+        "company_id": "shimanefujitsu",
+        "name": "株式会社島根富士通",
+        "plan": "スタンダードプラン",
+        "agency": "0012w00000LgVC5AAN",
+        "storage_used_gb": 434.9,
+        "volume_size_gb": 550.0,
+        "rate_now": 79.1,
+        "rate_prev": 96.6,
+        "change_gb": -96.62,
+        "change_pct": -17.5
+      },
+      {
+        "company_id": "ninthcolor",
+        "name": "株式会社ナインスカラー",
+        "plan": "スタンダードプラン",
+        "agency": "0012w00000HZdr4AAD",
+        "storage_used_gb": 382.76,
+        "volume_size_gb": 500.0,
+        "rate_now": 76.6,
+        "rate_prev": 87.8,
+        "change_gb": -56.0,
+        "change_pct": -11.2
+      },
+      {
+        "company_id": "teraoka",
+        "name": "株式会社寺岡",
+        "plan": "アドバンスドプラン",
+        "agency": "0012w00000LgVC5AAN",
+        "storage_used_gb": 840.0,
+        "volume_size_gb": 1024.0,
+        "rate_now": 82.0,
+        "rate_prev": 92.4,
+        "change_gb": -106.37,
+        "change_pct": -10.4
+      }
+    ]
+  },
+  "total_companies": 7082,
+  "generated_at": "2026-05-15T08:46:37.290679",
+  "slack_messages": {
+    "surge": "<!channel>\n:chart_with_upwards_trend: *高使用率帯で急増* (2026-05-14)\n比較期間: 2026-05-07 → 2026-05-14 | 検出: 2 件\n条件: 使用率80%以上 かつ +5pt以上 かつ +20GB以上\n\n  • *鬼頭工業株式会社* — +61.25GB / +10.2pt (81.4% → 91.6%)  [549.9/600.0GB]\n  • *cadnet* — +28.17GB / +5.7pt (87.2% → 92.9%)  [464.29/500.0GB]",
+    "churn_risk": "<!channel>\n:chart_with_downwards_trend: *解約リスク（ストレージ急減）* (2026-05-14)\n比較期間: 2026-05-07 → 2026-05-14 | 検出: 4 件\n条件: 使用率50%以上から -10pt以上 かつ -20GB以上\n\n  • *株式会社J-POWERビジネスサービス* — -370.84GB / -36.2pt (90.8% → 54.6%)  [559.17/1024.0GB]\n  • *株式会社島根富士通* — -96.62GB / -17.5pt (96.6% → 79.1%)  [434.9/550.0GB]\n  • *株式会社ナインスカラー* — -56.0GB / -11.2pt (87.8% → 76.6%)  [382.76/500.0GB]\n  • *株式会社寺岡* — -106.37GB / -10.4pt (92.4% → 82.0%)  [840.0/1024.0GB]"
+  }
+}
