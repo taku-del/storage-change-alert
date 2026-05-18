@@ -45,7 +45,7 @@ LOOKBACK_DAYS = 7
 SLACK_DISPLAY_MAX = 10
 
 SF_BASE_URL = "https://directcloud.my.salesforce.com"
-TABLEAU_DASHBOARD_URL = "https://prod-apnortheast-a.online.tableau.com/#/site/directcloud/workbooks/4220352"
+TABLEAU_DASHBOARD_URL = "https://prod-apnortheast-a.online.tableau.com/#/site/directcloud/workbooks/4681647"
 
 
 def download_extract():
