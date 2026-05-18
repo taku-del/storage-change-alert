@@ -5,6 +5,7 @@
     "surge": [
       {
         "company_id": "kitomac",
+        "sf_account_id": "0012w00000HYmGxAAL",
         "name": "鬼頭工業株式会社",
         "plan": "スタンダードプラン",
         "agency": "0012w00000HZdqzAAD",
@@ -17,6 +18,7 @@
       },
       {
         "company_id": "cadnet",
+        "sf_account_id": "",
         "name": "cadnet",
         "plan": "",
         "agency": "",
@@ -31,6 +33,7 @@
     "churn_risk": [
       {
         "company_id": "brzwwngz",
+        "sf_account_id": "0012w00000r4zkDAAQ",
         "name": "株式会社J-POWERビジネスサービス",
         "plan": "アドバンスドプラン",
         "agency": "",
@@ -43,6 +46,7 @@
       },
       {
         "company_id": "shimanefujitsu",
+        "sf_account_id": "001BB000003HyM4YAK",
         "name": "株式会社島根富士通",
         "plan": "スタンダードプラン",
         "agency": "0012w00000LgVC5AAN",
@@ -55,6 +59,7 @@
       },
       {
         "company_id": "ninthcolor",
+        "sf_account_id": "001BB000005ETbXYAW",
         "name": "株式会社ナインスカラー",
         "plan": "スタンダードプラン",
         "agency": "0012w00000HZdr4AAD",
@@ -67,6 +72,7 @@
       },
       {
         "company_id": "teraoka",
+        "sf_account_id": "001BB000004bN3FYAU",
         "name": "株式会社寺岡",
         "plan": "アドバンスドプラン",
         "agency": "0012w00000LgVC5AAN",
@@ -80,9 +86,9 @@
     ]
   },
   "total_companies": 7082,
-  "generated_at": "2026-05-15T08:46:37.290679",
+  "generated_at": "2026-05-18T09:58:57.321732",
   "slack_messages": {
-    "surge": "<!channel>\n:chart_with_upwards_trend: *高使用率帯で急増* (2026-05-14)\n比較期間: 2026-05-07 → 2026-05-14 | 検出: 2 件\n条件: 使用率80%以上 かつ +5pt以上 かつ +20GB以上\n\n  • *鬼頭工業株式会社* — +61.25GB / +10.2pt (81.4% → 91.6%)  [549.9/600.0GB]\n  • *cadnet* — +28.17GB / +5.7pt (87.2% → 92.9%)  [464.29/500.0GB]",
-    "churn_risk": "<!channel>\n:chart_with_downwards_trend: *解約リスク（ストレージ急減）* (2026-05-14)\n比較期間: 2026-05-07 → 2026-05-14 | 検出: 4 件\n条件: 使用率50%以上から -10pt以上 かつ -20GB以上\n\n  • *株式会社J-POWERビジネスサービス* — -370.84GB / -36.2pt (90.8% → 54.6%)  [559.17/1024.0GB]\n  • *株式会社島根富士通* — -96.62GB / -17.5pt (96.6% → 79.1%)  [434.9/550.0GB]\n  • *株式会社ナインスカラー* — -56.0GB / -11.2pt (87.8% → 76.6%)  [382.76/500.0GB]\n  • *株式会社寺岡* — -106.37GB / -10.4pt (92.4% → 82.0%)  [840.0/1024.0GB]"
+    "surge": "<!channel>\n:chart_with_upwards_trend: *高使用率帯で急増* (2026-05-14)\n比較期間: 2026-05-07 → 2026-05-14 | 検出: 2 件\n条件: 使用率80%以上 かつ +5pt以上 かつ +20GB以上\n\n  • *<https://directcloud.my.salesforce.com/0012w00000HYmGxAAL|鬼頭工業株式会社>* — +61.25GB / +10.2pt (81.4% → 91.6%)  [549.9/600.0GB]\n  • *cadnet* — +28.17GB / +5.7pt (87.2% → 92.9%)  [464.29/500.0GB]",
+    "churn_risk": "<!channel>\n:chart_with_downwards_trend: *解約リスク（ストレージ急減）* (2026-05-14)\n比較期間: 2026-05-07 → 2026-05-14 | 検出: 4 件\n条件: 使用率50%以上から -10pt以上 かつ -20GB以上\n\n  • *<https://directcloud.my.salesforce.com/0012w00000r4zkDAAQ|株式会社J-POWERビジネスサービス>* — -370.84GB / -36.2pt (90.8% → 54.6%)  [559.17/1024.0GB]\n  • *<https://directcloud.my.salesforce.com/001BB000003HyM4YAK|株式会社島根富士通>* — -96.62GB / -17.5pt (96.6% → 79.1%)  [434.9/550.0GB]\n  • *<https://directcloud.my.salesforce.com/001BB000005ETbXYAW|株式会社ナインスカラー>* — -56.0GB / -11.2pt (87.8% → 76.6%)  [382.76/500.0GB]\n  • *<https://directcloud.my.salesforce.com/001BB000004bN3FYAU|株式会社寺岡>* — -106.37GB / -10.4pt (92.4% → 82.0%)  [840.0/1024.0GB]\n\n:bar_chart: <https://prod-apnortheast-a.online.tableau.com/#/site/directcloud/workbooks/4220352|Tableauダッシュボードで詳細確認>"
   }
 }
