@@ -2,8 +2,8 @@ name: Weekly Storage Change Alert
 
 on:
   schedule:
-    # 毎週月曜 10:00 JST (= 日曜 01:00 UTC)
-    - cron: '0 1 * * 1'
+    # 毎週月曜 10:30 JST (= 月曜 01:30 UTC)
+    - cron: '30 1 * * 1'
   workflow_dispatch: # 手動実行用
 
 permissions:
