@@ -1,15 +1,16 @@
 """
-ストレージ使用量の変化検知スクリプト
+ストレージ使用量の変化検知 + 更新リスク検知スクリプト
 
-Tableau Cloud の usage_statistics から直近データを取得し、
-前週比で大きな変化があった顧客を検出。
+Tableau Cloud の CS_利用統計_統合 から直近データを取得し、
+前週比で大きな変化があった顧客、および更新間近で接触空白のある顧客を検出。
 
 結果は results/latest.json に保存し、GitHub Actions がコミット。
 Slack投稿は Claude Remote Trigger が MCP 経由で行う。
 
 検出カテゴリ:
   1. 高使用率帯で急増: 既に80%以上 かつ 使用率+5pt以上 かつ 変化量20GB以上
-  2. 解約リスク: 元々50%以上から 使用率-10pt以上 かつ 変化量20GB以上
+  2. 解約リスク（急減）: 元々50%以上から 使用率-10pt以上 かつ 変化量20GB以上
+  3. 更新リスク（接触空白）: 更新3ヶ月以内 × 最終活動90日以上前 × ビジネス以上
 
 環境変数:
   TABLEAU_PAT_SECRET  — Tableau Cloud PAT
@@ -44,12 +45,26 @@ DROP_RATE_MIN = 50
 LOOKBACK_DAYS = 7
 SLACK_DISPLAY_MAX = 10
 
+# ── 更新リスク閾値 ──
+RENEWAL_MONTHS_AHEAD = 3
+CONTACT_SILENT_DAYS = 90
+RENEWAL_DISPLAY_MAX = 10
+
 SF_BASE_URL = "https://directcloud.my.salesforce.com"
 TABLEAU_DASHBOARD_URL = "https://prod-apnortheast-a.online.tableau.com/#/site/directcloud/workbooks/4681647"
 
+# ビジネス以上のプラン（通知対象）
+UPPER_PLANS = {
+    'ビジネスプラン', 'プレミアムプラン', 'エンタープライズプラン', 'アドバンスドプラン',
+    'ビジネスプラン(2024)', 'プレミアムプラン(2024)', 'エンタープライズプラン(2024)', 'アドバンスドプラン(2024)',
+    'ビジネス(2025)', 'プレミアム(2025)', 'エンタープライズ(2025)', 'アドバンスド(2025)',
+}
+
+DS_NAME = "CS_利用統計_統合"
+
 
 def download_extract():
-    """Tableau Cloud から usage_statistics + Account をダウンロード"""
+    """Tableau Cloud から CS_利用統計_統合 をダウンロード"""
     if not TOKEN_SECRET:
         print("ERROR: TABLEAU_PAT_SECRET が未設定", file=sys.stderr)
         sys.exit(1)
@@ -60,11 +75,11 @@ def download_extract():
     with server.auth.sign_in(auth):
         datasources, _ = server.datasources.get()
         target_ds = next(
-            (ds for ds in datasources if ds.name == "usage_statistics (tableau)"),
+            (ds for ds in datasources if ds.name == DS_NAME),
             None,
         )
         if not target_ds:
-            print("ERROR: usage_statistics (tableau) が見つかりません", file=sys.stderr)
+            print(f"ERROR: {DS_NAME} が見つかりません", file=sys.stderr)
             sys.exit(1)
 
         print(f"[Tableau] ダウンロード: {target_ds.name}")
@@ -80,7 +95,7 @@ def download_extract():
 
             tables = pantab.frames_from_hyper(hyper_path)
 
-    return tables[("Extract", "usage_statistics")], tables[("Extract", "Account")]
+    return tables
 
 
 def build_company_map(account: pd.DataFrame) -> dict:
@@ -219,6 +234,88 @@ def format_surge_message(result: dict) -> str:
     return "\n".join(lines)
 
 
+def detect_renewal_risk(
+    account: pd.DataFrame,
+    task: pd.DataFrame,
+    contract: pd.DataFrame,
+    company_map: dict,
+) -> list:
+    """更新3ヶ月以内 × 最終活動90日以上前 × ビジネス以上 を検出"""
+    today = datetime.now().date()
+    cutoff_date = today + timedelta(days=RENEWAL_MONTHS_AHEAD * 30)
+    silent_since = today - timedelta(days=CONTACT_SILENT_DAYS)
+
+    # 最終活動日をAccount単位で集計
+    task = task.copy()
+    task["ActivityDate"] = pd.to_datetime(task["ActivityDate"], errors="coerce")
+    last_activity = (
+        task.groupby("AccountId")["ActivityDate"]
+        .max()
+        .reset_index()
+        .rename(columns={"ActivityDate": "last_activity"})
+    )
+
+    # アクティブ契約の次回更新日
+    active = contract[
+        (contract["IsActive__c"] == True) & (contract["Churn__c"] == False)
+    ].copy()
+    active["Contract_Planned_End_Month__c"] = pd.to_datetime(
+        active["Contract_Planned_End_Month__c"], errors="coerce"
+    )
+    next_renewal = (
+        active.groupby("Account__c")["Contract_Planned_End_Month__c"]
+        .max()
+        .reset_index()
+        .rename(columns={"Contract_Planned_End_Month__c": "next_end"})
+    )
+
+    # Account に結合
+    acct = account[account["Type"] == "顧客"][["Id", "Name", "ID__c", "contractplan__c"]].copy()
+    merged = acct.merge(next_renewal, left_on="Id", right_on="Account__c", how="inner")
+    merged = merged.merge(last_activity, left_on="Id", right_on="AccountId", how="left")
+
+    # フィルタ: 更新3ヶ月以内
+    merged = merged[
+        (merged["next_end"].dt.date >= today)
+        & (merged["next_end"].dt.date <= cutoff_date)
+    ]
+
+    # フィルタ: ビジネス以上
+    merged = merged[merged["contractplan__c"].isin(UPPER_PLANS)]
+
+    # フィルタ: 最終活動90日以上前 or 活動なし
+    merged = merged[
+        (merged["last_activity"].isna())
+        | (merged["last_activity"].dt.date < silent_since)
+    ]
+
+    # 日数計算・ソート
+    merged["days_since"] = merged["last_activity"].apply(
+        lambda x: (today - x.date()).days if pd.notna(x) else 9999
+    )
+    merged = merged.sort_values(["next_end", "days_since"], ascending=[True, False])
+
+    results = []
+    for _, row in merged.iterrows():
+        cid = str(row.get("ID__c", ""))
+        info = company_map.get(cid, {})
+        sf_id = info.get("sf_account_id", str(row.get("Id", "")))
+        last_act = row["last_activity"]
+
+        results.append({
+            "name": str(row["Name"]),
+            "sf_account_id": sf_id,
+            "plan": str(row.get("contractplan__c", "")),
+            "next_end": row["next_end"].strftime("%Y-%m-%d"),
+            "last_activity": last_act.strftime("%Y-%m-%d") if pd.notna(last_act) else None,
+            "days_since_contact": int(row["days_since"]),
+            "agency": info.get("agency", ""),
+        })
+
+    print(f"[検出] 更新リスク: {len(results)} 件")
+    return results
+
+
 def format_churn_message(result: dict) -> str:
     alerts = result["alerts"]["churn_risk"]
     latest = result["latest_date"]
@@ -254,20 +351,65 @@ def format_churn_message(result: dict) -> str:
     return "\n".join(lines)
 
 
+def format_renewal_risk_message(renewal_risks: list) -> str:
+    count = len(renewal_risks)
+    today = datetime.now().strftime("%Y-%m-%d")
+
+    if count == 0:
+        return (
+            f":large_green_circle: *更新リスク（接触空白）* ({today})\n"
+            f"該当なし"
+        )
+
+    lines = [
+        f":warning: *更新リスク（接触空白）* ({today})",
+        f"更新3ヶ月以内 × 最終活動{CONTACT_SILENT_DAYS}日以上前 × ビジネス以上 | 検出: {count} 件",
+        "",
+    ]
+    for a in renewal_risks[:RENEWAL_DISPLAY_MAX]:
+        name_link = _sf_link(a["name"], a.get("sf_account_id", ""))
+        last = a["last_activity"] or "記録なし"
+        days = a["days_since_contact"]
+        days_str = f"{days}日前" if days < 9999 else "記録なし"
+        plan_short = (
+            a["plan"]
+            .replace("プラン", "")
+            .replace("(2024)", "")
+            .replace("(2025)", "")
+        )
+        lines.append(
+            f"  • *{name_link}* — {plan_short} / "
+            f"更新: {a['next_end']} / 最終活動: {days_str}"
+        )
+    if count > RENEWAL_DISPLAY_MAX:
+        lines.append(f"  … 他 {count - RENEWAL_DISPLAY_MAX} 件")
+    return "\n".join(lines)
+
+
 def main():
-    usage, account = download_extract()
+    tables = download_extract()
+    usage = tables[("Extract", "usage_statistics")]
+    account = tables[("Extract", "Account")]
+    task = tables[("Extract", "Task")]
+    contract = tables[("Extract", "CustomContract__c")]
+
     company_map = build_company_map(account)
     result = detect_changes(usage, company_map)
 
     surge_count = len(result["alerts"]["surge"])
     churn_count = len(result["alerts"]["churn_risk"])
     print(f"\n高使用率帯で急増: {surge_count} 件")
-    print(f"解約リスク:       {churn_count} 件")
+    print(f"解約リスク（急減）: {churn_count} 件")
+
+    # 更新リスク検出
+    renewal_risks = detect_renewal_risk(account, task, contract, company_map)
+    result["alerts"]["renewal_risk"] = renewal_risks
 
     # Slack用メッセージを生成
     result["slack_messages"] = {
         "surge": format_surge_message(result),
         "churn_risk": format_churn_message(result),
+        "renewal_risk": format_renewal_risk_message(renewal_risks),
     }
 
     # 結果保存
