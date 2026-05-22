@@ -83,12 +83,967 @@
         "change_gb": -104.23,
         "change_pct": -10.2
       }
+    ],
+    "renewal_risk": [
+      {
+        "name": "三興製鋼株式会社",
+        "sf_account_id": "001Q8000005a5rGIAQ",
+        "plan": "ビジネスプラン",
+        "next_end": "2026-06-01",
+        "last_activity": null,
+        "days_since_contact": 9999
+      },
+      {
+        "name": "昭栄化学工業株式会社",
+        "sf_account_id": "001Q800000FTj18IAD",
+        "plan": "アドバンスドプラン",
+        "next_end": "2026-06-01",
+        "last_activity": null,
+        "days_since_contact": 9999
+      },
+      {
+        "name": "日本紙運輸倉庫株式会社",
+        "sf_account_id": "001Q800000Fcg5dIAB",
+        "plan": "アドバンスドプラン",
+        "next_end": "2026-06-01",
+        "last_activity": null,
+        "days_since_contact": 9999
+      },
+      {
+        "name": "医療法人社団緑稜会",
+        "sf_account_id": "001Q800000GN8TVIA1",
+        "plan": "アドバンスドプラン",
+        "next_end": "2026-06-01",
+        "last_activity": null,
+        "days_since_contact": 9999
+      },
+      {
+        "name": "株式会社3CA",
+        "sf_account_id": "001Q800000H02uVIAR",
+        "plan": "アドバンスドプラン",
+        "next_end": "2026-06-01",
+        "last_activity": null,
+        "days_since_contact": 9999
+      },
+      {
+        "name": "学校法人葵学園 函館あおい認定こども園",
+        "sf_account_id": "001BB0000034c3JYAQ",
+        "plan": "アドバンスドプラン",
+        "next_end": "2026-06-01",
+        "last_activity": "2022-06-22",
+        "days_since_contact": 1430
+      },
+      {
+        "name": "株式会社かねたや家具店",
+        "sf_account_id": "001Q800000HEw5ZIAT",
+        "plan": "アドバンスドプラン",
+        "next_end": "2026-06-01",
+        "last_activity": "2025-03-07",
+        "days_since_contact": 441
+      },
+      {
+        "name": "日本メンテナスエンジニヤリング株式会社",
+        "sf_account_id": "001BB0000038BTZYA2",
+        "plan": "アドバンスドプラン",
+        "next_end": "2026-06-01",
+        "last_activity": "2025-05-19",
+        "days_since_contact": 368
+      },
+      {
+        "name": "山﨑建設株式会社",
+        "sf_account_id": "001BB000002OtF3YAK",
+        "plan": "ビジネスプラン",
+        "next_end": "2026-06-01",
+        "last_activity": "2025-06-10",
+        "days_since_contact": 346
+      },
+      {
+        "name": "オカネツ工業株式会社",
+        "sf_account_id": "001Q800000GpEanIAF",
+        "plan": "ビジネスプラン",
+        "next_end": "2026-06-01",
+        "last_activity": "2025-06-10",
+        "days_since_contact": 346
+      },
+      {
+        "name": "月島倉庫株式会社",
+        "sf_account_id": "0012w00000hfd3cAAA",
+        "plan": "ビジネスプラン",
+        "next_end": "2026-06-01",
+        "last_activity": "2025-06-27",
+        "days_since_contact": 329
+      },
+      {
+        "name": "AUSPICIOUS株式会社",
+        "sf_account_id": "001BB000002pxc2YAA",
+        "plan": "ビジネスプラン",
+        "next_end": "2026-06-01",
+        "last_activity": "2025-07-03",
+        "days_since_contact": 323
+      },
+      {
+        "name": "アシードホールディングス株式会社",
+        "sf_account_id": "0012w00000gLN8wAAG",
+        "plan": "ビジネスプラン",
+        "next_end": "2026-06-01",
+        "last_activity": "2025-07-14",
+        "days_since_contact": 312
+      },
+      {
+        "name": "東海旅客鉄道労働組合",
+        "sf_account_id": "0012w00000UH5XuAAL",
+        "plan": "ビジネスプラン",
+        "next_end": "2026-06-01",
+        "last_activity": "2025-08-04",
+        "days_since_contact": 291
+      },
+      {
+        "name": "株式会社トミス",
+        "sf_account_id": "0012w00000twxPmAAI",
+        "plan": "ビジネスプラン",
+        "next_end": "2026-06-01",
+        "last_activity": "2025-08-04",
+        "days_since_contact": 291
+      },
+      {
+        "name": "株式会社ゼネラルアサヒ",
+        "sf_account_id": "001BB000002bF81YAE",
+        "plan": "アドバンスドプラン",
+        "next_end": "2026-06-01",
+        "last_activity": "2025-08-04",
+        "days_since_contact": 291
+      },
+      {
+        "name": "社会福祉法人聖隷福祉事業団",
+        "sf_account_id": "001BB000002dAUGYA2",
+        "plan": "ビジネスプラン",
+        "next_end": "2026-06-01",
+        "last_activity": "2025-08-04",
+        "days_since_contact": 291
+      },
+      {
+        "name": "株式会社トーエル",
+        "sf_account_id": "001BB000002pgEPYAY",
+        "plan": "アドバンスドプラン",
+        "next_end": "2026-06-01",
+        "last_activity": "2025-08-04",
+        "days_since_contact": 291
+      },
+      {
+        "name": "株式会社三協技術",
+        "sf_account_id": "001BB000004GvCGYA0",
+        "plan": "アドバンスドプラン",
+        "next_end": "2026-06-01",
+        "last_activity": "2025-08-04",
+        "days_since_contact": 291
+      },
+      {
+        "name": "株式会社パロマ",
+        "sf_account_id": "001BB0000055GcpYAE",
+        "plan": "アドバンスドプラン",
+        "next_end": "2026-06-01",
+        "last_activity": "2025-08-04",
+        "days_since_contact": 291
+      },
+      {
+        "name": "全国漁業信用基金協会 静岡支所",
+        "sf_account_id": "001Q800000AH1YDIA1",
+        "plan": "アドバンスドプラン",
+        "next_end": "2026-06-01",
+        "last_activity": "2025-08-04",
+        "days_since_contact": 291
+      },
+      {
+        "name": "株式会社デイシス",
+        "sf_account_id": "001Q800000BV3EbIAL",
+        "plan": "アドバンスドプラン",
+        "next_end": "2026-06-01",
+        "last_activity": "2025-08-04",
+        "days_since_contact": 291
+      },
+      {
+        "name": "株式会社東京マルイ",
+        "sf_account_id": "001Q800000HJU2DIAX",
+        "plan": "ビジネスプラン",
+        "next_end": "2026-06-01",
+        "last_activity": "2025-08-04",
+        "days_since_contact": 291
+      },
+      {
+        "name": "首都ハイウエイサービス株式会社",
+        "sf_account_id": "001Q800000gpBSfIAM",
+        "plan": "ビジネスプラン",
+        "next_end": "2026-06-01",
+        "last_activity": "2025-08-07",
+        "days_since_contact": 288
+      },
+      {
+        "name": "株式会社リメディア",
+        "sf_account_id": "0012w00000PhlR4AAJ",
+        "plan": "アドバンスドプラン",
+        "next_end": "2026-06-01",
+        "last_activity": "2025-09-09",
+        "days_since_contact": 255
+      },
+      {
+        "name": "福岡八女農業協同組合",
+        "sf_account_id": "0012w00000HYmS1AAL",
+        "plan": "プレミアムプラン",
+        "next_end": "2026-06-01",
+        "last_activity": "2025-10-06",
+        "days_since_contact": 228
+      },
+      {
+        "name": "社会福祉法人上越あたご福祉会",
+        "sf_account_id": "001BB000002g3UYYAY",
+        "plan": "ビジネスプラン",
+        "next_end": "2026-06-01",
+        "last_activity": "2025-10-15",
+        "days_since_contact": 219
+      },
+      {
+        "name": "株式会社ワイ・ジービー",
+        "sf_account_id": "001BB000004nHQ9YAM",
+        "plan": "アドバンスドプラン",
+        "next_end": "2026-06-01",
+        "last_activity": "2025-10-15",
+        "days_since_contact": 219
+      },
+      {
+        "name": "株式会社ズコーシャ",
+        "sf_account_id": "001Q800000AqhzBIAR",
+        "plan": "アドバンスドプラン",
+        "next_end": "2026-06-01",
+        "last_activity": "2025-10-22",
+        "days_since_contact": 212
+      },
+      {
+        "name": "一般社団法人日本貨物検数協会",
+        "sf_account_id": "0012w00000fSMDUAA4",
+        "plan": "アドバンスドプラン",
+        "next_end": "2026-06-01",
+        "last_activity": "2025-10-29",
+        "days_since_contact": 205
+      },
+      {
+        "name": "肥田電器株式会社",
+        "sf_account_id": "001BB000002XjgjYAC",
+        "plan": "ビジネスプラン",
+        "next_end": "2026-06-01",
+        "last_activity": "2025-10-30",
+        "days_since_contact": 204
+      },
+      {
+        "name": "学校法人亜細亜学園",
+        "sf_account_id": "001Q8000005GyLXIA0",
+        "plan": "アドバンスドプラン",
+        "next_end": "2026-06-01",
+        "last_activity": "2025-10-31",
+        "days_since_contact": 203
+      },
+      {
+        "name": "合同会社EXNOA",
+        "sf_account_id": "0012w00000HYmR8AAL",
+        "plan": "エンタープライズプラン",
+        "next_end": "2026-06-01",
+        "last_activity": "2025-11-05",
+        "days_since_contact": 198
+      },
+      {
+        "name": "ビーウィズ株式会社",
+        "sf_account_id": "0012w00000kAcEFAA0",
+        "plan": "ビジネスプラン",
+        "next_end": "2026-06-01",
+        "last_activity": "2025-11-05",
+        "days_since_contact": 198
+      },
+      {
+        "name": "株式会社NTTデータエンジニアリングシステムズ（DCB2402354）",
+        "sf_account_id": "001Q800000I1cthIAB",
+        "plan": "アドバンスドプラン",
+        "next_end": "2026-06-01",
+        "last_activity": "2025-11-10",
+        "days_since_contact": 193
+      },
+      {
+        "name": "デンソーテン労働組合",
+        "sf_account_id": "001BB000002rZacYAE",
+        "plan": "ビジネスプラン",
+        "next_end": "2026-06-01",
+        "last_activity": "2025-11-11",
+        "days_since_contact": 192
+      },
+      {
+        "name": "公益財団法人豊田地域医療センター",
+        "sf_account_id": "001Q800000BV3svIAD",
+        "plan": "ビジネスプラン",
+        "next_end": "2026-06-01",
+        "last_activity": "2025-11-19",
+        "days_since_contact": 184
+      },
+      {
+        "name": "株式会社東京測器研究所",
+        "sf_account_id": "001BB000002hjilYAA",
+        "plan": "ビジネスプラン",
+        "next_end": "2026-06-01",
+        "last_activity": "2025-12-10",
+        "days_since_contact": 163
+      },
+      {
+        "name": "株式会社アドバンテック",
+        "sf_account_id": "001Q800000b8oFFIAY",
+        "plan": "ビジネスプラン",
+        "next_end": "2026-06-01",
+        "last_activity": "2025-12-15",
+        "days_since_contact": 158
+      },
+      {
+        "name": "古河林業株式会社",
+        "sf_account_id": "0012w00000gNDgcAAG",
+        "plan": "ビジネスプラン",
+        "next_end": "2026-06-01",
+        "last_activity": "2025-12-16",
+        "days_since_contact": 157
+      },
+      {
+        "name": "株式会社富士通ゼネラル（DCB2402346-006）",
+        "sf_account_id": "001BB000005NMRWYA4",
+        "plan": "エンタープライズプラン",
+        "next_end": "2026-06-01",
+        "last_activity": "2025-12-24",
+        "days_since_contact": 149
+      },
+      {
+        "name": "株式会社Kirala",
+        "sf_account_id": "001BB000002S0aHYAS",
+        "plan": "アドバンスドプラン",
+        "next_end": "2026-06-01",
+        "last_activity": "2026-02-04",
+        "days_since_contact": 107
+      },
+      {
+        "name": "北陸電力株式会社",
+        "sf_account_id": "001BB0000049KlbYAE",
+        "plan": "エンタープライズプラン",
+        "next_end": "2026-06-01",
+        "last_activity": "2026-02-10",
+        "days_since_contact": 101
+      },
+      {
+        "name": "東武運輸株式会社",
+        "sf_account_id": "001BB000002YTEOYA4",
+        "plan": "ビジネスプラン",
+        "next_end": "2026-06-01",
+        "last_activity": "2026-02-18",
+        "days_since_contact": 93
+      },
+      {
+        "name": "有機合成薬品工業株式会社",
+        "sf_account_id": "001BB000004Zfo5YAC",
+        "plan": "プレミアムプラン",
+        "next_end": "2026-06-01",
+        "last_activity": "2026-02-18",
+        "days_since_contact": 93
+      },
+      {
+        "name": "株式会社五島軒",
+        "sf_account_id": "001BB0000056OoxYAE",
+        "plan": "アドバンスドプラン",
+        "next_end": "2026-07-01",
+        "last_activity": null,
+        "days_since_contact": 9999
+      },
+      {
+        "name": "高末株式会社",
+        "sf_account_id": "001Q800000Fy8IDIAZ",
+        "plan": "アドバンスドプラン",
+        "next_end": "2026-07-01",
+        "last_activity": null,
+        "days_since_contact": 9999
+      },
+      {
+        "name": "NGFホールディングス株式会社",
+        "sf_account_id": "001Q800000FlTHGIA3",
+        "plan": "ビジネスプラン",
+        "next_end": "2026-07-01",
+        "last_activity": "2025-06-27",
+        "days_since_contact": 329
+      },
+      {
+        "name": "株式会社ビーシーシー",
+        "sf_account_id": "0012w00000hfyWyAAI",
+        "plan": "ビジネスプラン",
+        "next_end": "2026-07-01",
+        "last_activity": "2025-06-30",
+        "days_since_contact": 326
+      },
+      {
+        "name": "アンカー税理士法人",
+        "sf_account_id": "001Q800000i25zzIAA",
+        "plan": "ビジネスプラン",
+        "next_end": "2026-07-01",
+        "last_activity": "2025-07-17",
+        "days_since_contact": 309
+      },
+      {
+        "name": "日鉄片倉鋼管株式会社",
+        "sf_account_id": "001Q800000EtfP4IAJ",
+        "plan": "ビジネスプラン",
+        "next_end": "2026-07-01",
+        "last_activity": "2025-07-30",
+        "days_since_contact": 296
+      },
+      {
+        "name": "全国共済農業協同組合連合会　岐阜県本部",
+        "sf_account_id": "001BB000003Ea8IYAS",
+        "plan": "アドバンスドプラン",
+        "next_end": "2026-07-01",
+        "last_activity": "2025-08-01",
+        "days_since_contact": 294
+      },
+      {
+        "name": "ネッツトヨタ富山株式会社",
+        "sf_account_id": "0012w00000HYmGyAAL",
+        "plan": "ビジネスプラン",
+        "next_end": "2026-07-01",
+        "last_activity": "2025-08-04",
+        "days_since_contact": 291
+      },
+      {
+        "name": "株式会社電通国際情報サービス",
+        "sf_account_id": "0012w00000HYmM7AAL",
+        "plan": "アドバンスドプラン",
+        "next_end": "2026-07-01",
+        "last_activity": "2025-08-04",
+        "days_since_contact": 291
+      },
+      {
+        "name": "池伝株式会社",
+        "sf_account_id": "0012w00000HYmRdAAL",
+        "plan": "ビジネスプラン",
+        "next_end": "2026-07-01",
+        "last_activity": "2025-08-04",
+        "days_since_contact": 291
+      },
+      {
+        "name": "城東テクノ株式会社",
+        "sf_account_id": "0012w00000gLaJqAAK",
+        "plan": "アドバンスドプラン",
+        "next_end": "2026-07-01",
+        "last_activity": "2025-08-04",
+        "days_since_contact": 291
+      },
+      {
+        "name": "株式会社クゼー",
+        "sf_account_id": "001BB0000038PG3YAM",
+        "plan": "ビジネスプラン",
+        "next_end": "2026-07-01",
+        "last_activity": "2025-08-04",
+        "days_since_contact": 291
+      },
+      {
+        "name": "株式会社光文書院",
+        "sf_account_id": "001BB0000059HbYYAU",
+        "plan": "ビジネスプラン",
+        "next_end": "2026-07-01",
+        "last_activity": "2025-08-04",
+        "days_since_contact": 291
+      },
+      {
+        "name": "株式会社データR&D",
+        "sf_account_id": "001BB0000059yN1YAI",
+        "plan": "ビジネスプラン",
+        "next_end": "2026-07-01",
+        "last_activity": "2025-08-04",
+        "days_since_contact": 291
+      },
+      {
+        "name": "ソニー銀行株式会社",
+        "sf_account_id": "0012w00000HYm56AAD",
+        "plan": "プレミアムプラン",
+        "next_end": "2026-07-01",
+        "last_activity": "2025-08-08",
+        "days_since_contact": 287
+      },
+      {
+        "name": "株式会社曲田商店",
+        "sf_account_id": "001Q800000cymyLIAQ",
+        "plan": "アドバンスドプラン",
+        "next_end": "2026-07-01",
+        "last_activity": "2025-09-02",
+        "days_since_contact": 262
+      },
+      {
+        "name": "株式会社荒井工務店",
+        "sf_account_id": "001Q800000i0TNFIA2",
+        "plan": "ビジネスプラン",
+        "next_end": "2026-07-01",
+        "last_activity": "2025-09-02",
+        "days_since_contact": 262
+      },
+      {
+        "name": "社会福祉法人奉優会",
+        "sf_account_id": "001Q800000HKbJNIA1",
+        "plan": "ビジネスプラン",
+        "next_end": "2026-07-01",
+        "last_activity": "2025-09-04",
+        "days_since_contact": 260
+      },
+      {
+        "name": "伊藤忠アーバンコミュニティ株式会社",
+        "sf_account_id": "001BB000003qNgEYAU",
+        "plan": "ビジネスプラン",
+        "next_end": "2026-07-01",
+        "last_activity": "2025-09-18",
+        "days_since_contact": 246
+      },
+      {
+        "name": "株式会社WOWOWコミュニケーションズ",
+        "sf_account_id": "0012w00000HYmPYAA1",
+        "plan": "ビジネスプラン",
+        "next_end": "2026-07-01",
+        "last_activity": "2025-10-20",
+        "days_since_contact": 214
+      },
+      {
+        "name": "協和機電ホールディングス株式会社",
+        "sf_account_id": "0012w00000avLweAAE",
+        "plan": "ビジネスプラン",
+        "next_end": "2026-07-01",
+        "last_activity": "2025-11-14",
+        "days_since_contact": 189
+      },
+      {
+        "name": "株式会社京急保険サービス（SUB25072278954）",
+        "sf_account_id": "001Q800000gUFhNIAW",
+        "plan": "アドバンスドプラン",
+        "next_end": "2026-07-01",
+        "last_activity": "2025-12-01",
+        "days_since_contact": 172
+      },
+      {
+        "name": "株式会社INNOVEL HEALTHCARE",
+        "sf_account_id": "001BB000004MRgyYAG",
+        "plan": "ビジネスプラン",
+        "next_end": "2026-07-01",
+        "last_activity": "2025-12-05",
+        "days_since_contact": 168
+      },
+      {
+        "name": "株式会社静鉄情報センター（しずてつジャストライン株式会社）",
+        "sf_account_id": "001Q800000g8IE7IAM",
+        "plan": "プレミアムプラン",
+        "next_end": "2026-07-01",
+        "last_activity": "2025-12-05",
+        "days_since_contact": 168
+      },
+      {
+        "name": "株式会社近藤商会",
+        "sf_account_id": "0012w00000HYmYTAA1",
+        "plan": "ビジネスプラン",
+        "next_end": "2026-07-01",
+        "last_activity": "2025-12-09",
+        "days_since_contact": 164
+      },
+      {
+        "name": "一般社団法人 日本循環器学会（銀座一丁目店）",
+        "sf_account_id": "001BB000003GrOyYAK",
+        "plan": "アドバンスドプラン",
+        "next_end": "2026-07-01",
+        "last_activity": "2025-12-10",
+        "days_since_contact": 163
+      },
+      {
+        "name": "株式会社エナリス",
+        "sf_account_id": "001Q800000TixlIIAR",
+        "plan": "ビジネスプラン",
+        "next_end": "2026-07-01",
+        "last_activity": "2025-12-10",
+        "days_since_contact": 163
+      },
+      {
+        "name": "株式会社高橋商店",
+        "sf_account_id": "0012w00000HYmWSAA1",
+        "plan": "アドバンスドプラン",
+        "next_end": "2026-07-01",
+        "last_activity": "2025-12-23",
+        "days_since_contact": 150
+      },
+      {
+        "name": "株式会社東京エネシス",
+        "sf_account_id": "0012w00000jXmnpAAC",
+        "plan": "ビジネスプラン",
+        "next_end": "2026-07-01",
+        "last_activity": "2025-12-25",
+        "days_since_contact": 148
+      },
+      {
+        "name": "株式会社ICCサービスセンター",
+        "sf_account_id": "0012w00000txd4mAAA",
+        "plan": "ビジネスプラン",
+        "next_end": "2026-07-01",
+        "last_activity": "2026-01-13",
+        "days_since_contact": 129
+      },
+      {
+        "name": "湘南ステーションビル株式会社",
+        "sf_account_id": "0012w00000t1W7CAAU",
+        "plan": "プレミアムプラン",
+        "next_end": "2026-07-01",
+        "last_activity": "2026-01-28",
+        "days_since_contact": 114
+      },
+      {
+        "name": "KISCO株式会社",
+        "sf_account_id": "0012w00000awalLAAQ",
+        "plan": "ビジネスプラン",
+        "next_end": "2026-07-01",
+        "last_activity": "2026-02-12",
+        "days_since_contact": 99
+      },
+      {
+        "name": "大東食研株式会社",
+        "sf_account_id": "0012w00000HYmEoAAL",
+        "plan": "ビジネスプラン",
+        "next_end": "2026-08-01",
+        "last_activity": null,
+        "days_since_contact": 9999
+      },
+      {
+        "name": "株式会社MAXISエデュケーション",
+        "sf_account_id": "001BB00000550exYAA",
+        "plan": "アドバンスドプラン",
+        "next_end": "2026-08-01",
+        "last_activity": null,
+        "days_since_contact": 9999
+      },
+      {
+        "name": "南波建設株式会社",
+        "sf_account_id": "001BB000002yARnYAM",
+        "plan": "アドバンスドプラン",
+        "next_end": "2026-08-01",
+        "last_activity": "2022-08-05",
+        "days_since_contact": 1386
+      },
+      {
+        "name": "豊川信用金庫",
+        "sf_account_id": "001BB0000034jJ4YAI",
+        "plan": "ビジネスプラン",
+        "next_end": "2026-08-01",
+        "last_activity": "2025-07-09",
+        "days_since_contact": 317
+      },
+      {
+        "name": "株式会社トーコー",
+        "sf_account_id": "0012w00000ip9i9AAA",
+        "plan": "ビジネスプラン",
+        "next_end": "2026-08-01",
+        "last_activity": "2025-07-15",
+        "days_since_contact": 311
+      },
+      {
+        "name": "株式会社総合資格（DCB1900549）",
+        "sf_account_id": "0012w00000HYm4lAAD",
+        "plan": "アドバンスドプラン",
+        "next_end": "2026-08-01",
+        "last_activity": "2025-08-04",
+        "days_since_contact": 291
+      },
+      {
+        "name": "フュージョン株式会社",
+        "sf_account_id": "0012w00000HYmICAA1",
+        "plan": "ビジネスプラン",
+        "next_end": "2026-08-01",
+        "last_activity": "2025-08-04",
+        "days_since_contact": 291
+      },
+      {
+        "name": "マックス株式会社",
+        "sf_account_id": "0012w00000HYmKaAAL",
+        "plan": "アドバンスドプラン",
+        "next_end": "2026-08-01",
+        "last_activity": "2025-08-04",
+        "days_since_contact": 291
+      },
+      {
+        "name": "株式会社イーカム",
+        "sf_account_id": "0012w00000VnrYlAAJ",
+        "plan": "アドバンスドプラン",
+        "next_end": "2026-08-01",
+        "last_activity": "2025-08-04",
+        "days_since_contact": 291
+      },
+      {
+        "name": "社会福祉法人ChaCha Children & Co.",
+        "sf_account_id": "0012w00000bUTntAAG",
+        "plan": "プレミアムプラン",
+        "next_end": "2026-08-01",
+        "last_activity": "2025-08-04",
+        "days_since_contact": 291
+      },
+      {
+        "name": "社会福祉法人上越福祉会",
+        "sf_account_id": "0012w00000vKQliAAG",
+        "plan": "ビジネスプラン",
+        "next_end": "2026-08-01",
+        "last_activity": "2025-08-04",
+        "days_since_contact": 291
+      },
+      {
+        "name": "新村印刷株式会社",
+        "sf_account_id": "001BB000003VaEqYAK",
+        "plan": "ビジネスプラン",
+        "next_end": "2026-08-01",
+        "last_activity": "2025-08-04",
+        "days_since_contact": 291
+      },
+      {
+        "name": "株式会社中日新聞社",
+        "sf_account_id": "001BB000004HlP0YAK",
+        "plan": "アドバンスドプラン",
+        "next_end": "2026-08-01",
+        "last_activity": "2025-08-04",
+        "days_since_contact": 291
+      },
+      {
+        "name": "仙建工業株式会社",
+        "sf_account_id": "001BB000004gbWfYAI",
+        "plan": "ビジネスプラン",
+        "next_end": "2026-08-01",
+        "last_activity": "2025-08-04",
+        "days_since_contact": 291
+      },
+      {
+        "name": "株式会社キングジム",
+        "sf_account_id": "001BB0000054LIhYAM",
+        "plan": "ビジネスプラン",
+        "next_end": "2026-08-01",
+        "last_activity": "2025-08-04",
+        "days_since_contact": 291
+      },
+      {
+        "name": "株式会社ルミネアソシエーツ",
+        "sf_account_id": "001BB000005Dw0tYAC",
+        "plan": "ビジネスプラン",
+        "next_end": "2026-08-01",
+        "last_activity": "2025-08-04",
+        "days_since_contact": 291
+      },
+      {
+        "name": "株式会社エアーポートカーゴサービス",
+        "sf_account_id": "001Q800000JsrnZIAR",
+        "plan": "アドバンスドプラン",
+        "next_end": "2026-08-01",
+        "last_activity": "2025-08-04",
+        "days_since_contact": 291
+      },
+      {
+        "name": "オルディ株式会社",
+        "sf_account_id": "001Q800000iAZrEIAW",
+        "plan": "ビジネスプラン",
+        "next_end": "2026-08-01",
+        "last_activity": "2025-08-05",
+        "days_since_contact": 290
+      },
+      {
+        "name": "株式会社京急ファインテック（SUB24082389944）",
+        "sf_account_id": "001Q8000009grdqIAA",
+        "plan": "ビジネスプラン",
+        "next_end": "2026-08-01",
+        "last_activity": "2025-08-06",
+        "days_since_contact": 289
+      },
+      {
+        "name": "株式会社ココルポート（DCB2502639-006）",
+        "sf_account_id": "001Q800000kdRqfIAE",
+        "plan": "ビジネスプラン",
+        "next_end": "2026-08-01",
+        "last_activity": "2025-08-07",
+        "days_since_contact": 288
+      },
+      {
+        "name": "千寿製薬株式会社",
+        "sf_account_id": "0012w00000HYm1ZAAT",
+        "plan": "ビジネスプラン",
+        "next_end": "2026-08-01",
+        "last_activity": "2025-08-20",
+        "days_since_contact": 275
+      },
+      {
+        "name": "丸善製薬株式会社",
+        "sf_account_id": "001Q800000kJ2rdIAC",
+        "plan": "ビジネスプラン",
+        "next_end": "2026-08-01",
+        "last_activity": "2025-08-27",
+        "days_since_contact": 268
+      },
+      {
+        "name": "株式会社コンヴァノ",
+        "sf_account_id": "001BB000004AsmBYAS",
+        "plan": "ビジネスプラン",
+        "next_end": "2026-08-01",
+        "last_activity": "2025-08-28",
+        "days_since_contact": 267
+      },
+      {
+        "name": "一般財団法人日本予防医学協会",
+        "sf_account_id": "001Q800000dEdxeIAC",
+        "plan": "アドバンスドプラン",
+        "next_end": "2026-08-01",
+        "last_activity": "2025-08-29",
+        "days_since_contact": 266
+      },
+      {
+        "name": "株式会社トヨタレンタリース兵庫",
+        "sf_account_id": "001Q800000kv5q7IAA",
+        "plan": "ビジネスプラン",
+        "next_end": "2026-08-01",
+        "last_activity": "2025-08-29",
+        "days_since_contact": 266
+      },
+      {
+        "name": "エクササイズコーチジャパン株式会社",
+        "sf_account_id": "0012w00000HYmYJAA1",
+        "plan": "ビジネスプラン",
+        "next_end": "2026-08-01",
+        "last_activity": "2025-09-08",
+        "days_since_contact": 256
+      },
+      {
+        "name": "株式会社生活総合サービス",
+        "sf_account_id": "001Q800000cy2SYIAY",
+        "plan": "ビジネスプラン",
+        "next_end": "2026-08-01",
+        "last_activity": "2025-09-24",
+        "days_since_contact": 240
+      },
+      {
+        "name": "エア・ウォーター・デジタル株式会社",
+        "sf_account_id": "0012w00000HYlzOAAT",
+        "plan": "アドバンスドプラン",
+        "next_end": "2026-08-01",
+        "last_activity": "2025-10-21",
+        "days_since_contact": 213
+      },
+      {
+        "name": "日本コンサルタンツ株式会社（DCB2201625）",
+        "sf_account_id": "001BB000003QHDGYA4",
+        "plan": "エンタープライズプラン",
+        "next_end": "2026-08-01",
+        "last_activity": "2025-11-06",
+        "days_since_contact": 197
+      },
+      {
+        "name": "株式会社スズケン",
+        "sf_account_id": "0012w00000HYmWzAAL",
+        "plan": "ビジネスプラン",
+        "next_end": "2026-08-01",
+        "last_activity": "2025-11-11",
+        "days_since_contact": 192
+      },
+      {
+        "name": "株式会社昭和システムエンジニアリング",
+        "sf_account_id": "0012w00000gKCJyAAO",
+        "plan": "アドバンスドプラン",
+        "next_end": "2026-08-01",
+        "last_activity": "2025-11-11",
+        "days_since_contact": 192
+      },
+      {
+        "name": "三菱電機デジタルイノベーション株式会社",
+        "sf_account_id": "001Q800000owOEsIAM",
+        "plan": "ビジネスプラン",
+        "next_end": "2026-08-01",
+        "last_activity": "2025-11-13",
+        "days_since_contact": 190
+      },
+      {
+        "name": "nmsホールディングス株式会社",
+        "sf_account_id": "0012w00000HYm3uAAD",
+        "plan": "ビジネスプラン",
+        "next_end": "2026-08-01",
+        "last_activity": "2025-11-18",
+        "days_since_contact": 185
+      },
+      {
+        "name": "社会福祉法人カメリア会",
+        "sf_account_id": "001Q800000UVnK6IAL",
+        "plan": "ビジネスプラン",
+        "next_end": "2026-08-01",
+        "last_activity": "2025-11-19",
+        "days_since_contact": 184
+      },
+      {
+        "name": "株式会社JM",
+        "sf_account_id": "0012w00000HYm5eAAD",
+        "plan": "エンタープライズプラン",
+        "next_end": "2026-08-01",
+        "last_activity": "2025-12-03",
+        "days_since_contact": 170
+      },
+      {
+        "name": "日本公証人連合会（DCB2402390-021）",
+        "sf_account_id": "001Q800000KYGwrIAH",
+        "plan": "ビジネスプラン",
+        "next_end": "2026-08-01",
+        "last_activity": "2026-01-08",
+        "days_since_contact": 134
+      },
+      {
+        "name": "京セラ株式会社（DCB2201635-023）",
+        "sf_account_id": "001BB000003QFhlYAG",
+        "plan": "アドバンスドプラン",
+        "next_end": "2026-08-01",
+        "last_activity": "2026-01-23",
+        "days_since_contact": 119
+      },
+      {
+        "name": "税理士法人トラスト",
+        "sf_account_id": "0012w00000hiRHCAA2",
+        "plan": "ビジネスプラン",
+        "next_end": "2026-08-01",
+        "last_activity": "2026-01-30",
+        "days_since_contact": 112
+      },
+      {
+        "name": "株式会社はとバス",
+        "sf_account_id": "001Q800000OqKpfIAF",
+        "plan": "ビジネスプラン",
+        "next_end": "2026-08-01",
+        "last_activity": "2026-02-09",
+        "days_since_contact": 102
+      },
+      {
+        "name": "M2ファーマシー株式会社",
+        "sf_account_id": "0012w00000KarYOAAZ",
+        "plan": "アドバンスドプラン",
+        "next_end": "2026-08-01",
+        "last_activity": "2026-02-10",
+        "days_since_contact": 101
+      },
+      {
+        "name": "エスピーメディアテック株式会社",
+        "sf_account_id": "0012w00000M3pmhAAB",
+        "plan": "ビジネスプラン",
+        "next_end": "2026-08-01",
+        "last_activity": "2026-02-12",
+        "days_since_contact": 99
+      },
+      {
+        "name": "イッツ・コミュニケーションズ株式会社（DCB2302002-019）",
+        "sf_account_id": "001BB000005EZFiYAO",
+        "plan": "ビジネスプラン",
+        "next_end": "2026-08-01",
+        "last_activity": "2026-02-20",
+        "days_since_contact": 91
+      }
     ]
   },
   "total_companies": 7082,
   "generated_at": "2026-05-18T14:39:16.477702",
   "slack_messages": {
     "surge": "<!channel>\n:chart_with_upwards_trend: *高使用率帯で急増* (2026-05-17)\n比較期間: 2026-05-10 → 2026-05-17 | 検出: 3 件\n条件: 使用率80%以上 かつ +5pt以上 かつ +20GB以上\n\n  • *<https://directcloud.my.salesforce.com/0012w00000HYmGxAAL|鬼頭工業株式会社>* — +54.21GB / +9.0pt (83.6% → 92.6%)  [555.83/600.0GB]\n  • *<https://directcloud.my.salesforce.com/001BB000005eAxtYAE|株式会社パシフィックネット>* — +187.27GB / +6.1pt (89.8% → 95.9%)  [2944.6/3072.0GB]\n  • *<https://directcloud.my.salesforce.com/001BB0000056Qh8YAE|株式会社ケーダッシュセカンド>* — +27.18GB / +5.4pt (89.1% → 94.5%)  [472.75/500.0GB]",
-    "churn_risk": "<!channel>\n:chart_with_downwards_trend: *解約リスク（ストレージ急減）* (2026-05-17)\n比較期間: 2026-05-10 → 2026-05-17 | 検出: 3 件\n条件: 使用率50%以上から -10pt以上 かつ -20GB以上\n\n  • *<https://directcloud.my.salesforce.com/001BB000003HyM4YAK|株式会社島根富士通>* — -78.66GB / -14.3pt (91.9% → 77.6%)  [426.88/550.0GB]\n  • *<https://directcloud.my.salesforce.com/0012w00000sy9XJAAY|株式会社エス・ティー・シー>* — -59.28GB / -10.8pt (92.1% → 81.3%)  [447.08/550.0GB]\n  • *<https://directcloud.my.salesforce.com/001BB000004bN3FYAU|株式会社寺岡>* — -104.23GB / -10.2pt (92.3% → 82.1%)  [840.82/1024.0GB]\n\n:bar_chart: <https://prod-apnortheast-a.online.tableau.com/#/site/directcloud/workbooks/4681647|Tableauダッシュボードで詳細確認>"
+    "churn_risk": "<!channel>\n:chart_with_downwards_trend: *解約リスク（ストレージ急減）* (2026-05-17)\n比較期間: 2026-05-10 → 2026-05-17 | 検出: 3 件\n条件: 使用率50%以上から -10pt以上 かつ -20GB以上\n\n  • *<https://directcloud.my.salesforce.com/001BB000003HyM4YAK|株式会社島根富士通>* — -78.66GB / -14.3pt (91.9% → 77.6%)  [426.88/550.0GB]\n  • *<https://directcloud.my.salesforce.com/0012w00000sy9XJAAY|株式会社エス・ティー・シー>* — -59.28GB / -10.8pt (92.1% → 81.3%)  [447.08/550.0GB]\n  • *<https://directcloud.my.salesforce.com/001BB000004bN3FYAU|株式会社寺岡>* — -104.23GB / -10.2pt (92.3% → 82.1%)  [840.82/1024.0GB]\n\n:bar_chart: <https://prod-apnortheast-a.online.tableau.com/#/site/directcloud/workbooks/4681647|Tableauダッシュボードで詳細確認>",
+    "renewal_risk": ":test_tube: *【テスト投稿】更新リスク（接触空白）* (2026-05-22)\n更新3ヶ月以内 × 最終活動90日以上前 × ビジネス以上 | 検出: 119 件\n\n  • *<https://directcloud.my.salesforce.com/001Q8000005a5rGIAQ|三興製鋼株式会社>* — ビジネス / 更新: 2026-06-01 / 最終活動: 記録なし\n  • *<https://directcloud.my.salesforce.com/001Q800000FTj18IAD|昭栄化学工業株式会社>* — アドバンスド / 更新: 2026-06-01 / 最終活動: 記録なし\n  • *<https://directcloud.my.salesforce.com/001Q800000Fcg5dIAB|日本紙運輸倉庫株式会社>* — アドバンスド / 更新: 2026-06-01 / 最終活動: 記録なし\n  • *<https://directcloud.my.salesforce.com/001Q800000GN8TVIA1|医療法人社団緑稜会>* — アドバンスド / 更新: 2026-06-01 / 最終活動: 記録なし\n  • *<https://directcloud.my.salesforce.com/001Q800000H02uVIAR|株式会社3CA>* — アドバンスド / 更新: 2026-06-01 / 最終活動: 記録なし\n  • *<https://directcloud.my.salesforce.com/001BB0000034c3JYAQ|学校法人葵学園 函館あおい認定こども園>* — アドバンスド / 更新: 2026-06-01 / 最終活動: 1430日前\n  • *<https://directcloud.my.salesforce.com/001Q800000HEw5ZIAT|株式会社かねたや家具店>* — アドバンスド / 更新: 2026-06-01 / 最終活動: 441日前\n  • *<https://directcloud.my.salesforce.com/001BB0000038BTZYA2|日本メンテナスエンジニヤリング株式会社>* — アドバンスド / 更新: 2026-06-01 / 最終活動: 368日前\n  • *<https://directcloud.my.salesforce.com/001BB000002OtF3YAK|山﨑建設株式会社>* — ビジネス / 更新: 2026-06-01 / 最終活動: 346日前\n  • *<https://directcloud.my.salesforce.com/001Q800000GpEanIAF|オカネツ工業株式会社>* — ビジネス / 更新: 2026-06-01 / 最終活動: 346日前\n  … 他 109 件"
   }
 }
