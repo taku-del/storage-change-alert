@@ -10,7 +10,7 @@ Slack投稿は Claude Remote Trigger が MCP 経由で行う。
 検出カテゴリ:
   1. 高使用率帯で急増: 既に80%以上 かつ 使用率+5pt以上 かつ 変化量20GB以上
   2. 解約リスク（急減）: 元々50%以上から 使用率-10pt以上 かつ 変化量20GB以上
-  3. 更新リスク（接触空白）: 更新3ヶ月以内 × 最終活動90日以上前 × ビジネス以上
+  3. 更新リスク（接触空白）: 更新3ヶ月以内 × 能動的接触90日以上前 × エンタープライズ/プレミアム
 
 環境変数:
   TABLEAU_PAT_SECRET  — Tableau Cloud PAT
@@ -53,12 +53,27 @@ RENEWAL_DISPLAY_MAX = 10
 SF_BASE_URL = "https://directcloud.my.salesforce.com"
 TABLEAU_DASHBOARD_URL = "https://prod-apnortheast-a.online.tableau.com/#/site/directcloud/workbooks/4681647"
 
-# ビジネス以上のプラン（通知対象）
+# エンタープライズ/プレミアム（通知対象）
 UPPER_PLANS = {
-    'ビジネスプラン', 'プレミアムプラン', 'エンタープライズプラン', 'アドバンスドプラン',
-    'ビジネスプラン(2024)', 'プレミアムプラン(2024)', 'エンタープライズプラン(2024)', 'アドバンスドプラン(2024)',
-    'ビジネス(2025)', 'プレミアム(2025)', 'エンタープライズ(2025)', 'アドバンスド(2025)',
+    'プレミアムプラン', 'エンタープライズプラン',
+    'プレミアムプラン(2024)', 'エンタープライズプラン(2024)',
+    'プレミアム(2025)', 'エンタープライズ(2025)',
 }
+
+# プラン優先度
+PLAN_RANK = {}
+for _p in UPPER_PLANS:
+    if 'エンタープライズ' in _p:
+        PLAN_RANK[_p] = 2
+    else:
+        PLAN_RANK[_p] = 1
+
+# 能動的接触とみなすTaskのSubjectキーワード
+ACTIVE_CONTACT_KEYWORDS = [
+    '電話', '打合せ', '打ち合わせ', '商談', '訪問',
+    'ミーティング', 'MTG', '状況確認', '追い電話', '案件フォロー',
+    'ToDo-電話',
+]
 
 DS_NAME = "CS_利用統計_統合"
 
@@ -238,15 +253,19 @@ def detect_renewal_risk(
     account: pd.DataFrame,
     task: pd.DataFrame,
     contract: pd.DataFrame,
+    contract_line: pd.DataFrame,
     company_map: dict,
 ) -> list:
-    """更新3ヶ月以内 × 最終活動90日以上前 × ビジネス以上 を検出"""
+    """更新3ヶ月以内 × 能動的接触90日以上前 × エンタープライズ/プレミアム を検出"""
     today = datetime.now().date()
     cutoff_date = today + timedelta(days=RENEWAL_MONTHS_AHEAD * 30)
     silent_since = today - timedelta(days=CONTACT_SILENT_DAYS)
 
-    # 最終活動日をAccount単位で集計
+    # 能動的接触のTaskのみフィルタ
     task = task.copy()
+    task["Subject"] = task["Subject"].fillna("")
+    kw_pattern = "|".join(ACTIVE_CONTACT_KEYWORDS)
+    task = task[task["Subject"].str.contains(kw_pattern, case=False, regex=True)]
     task["ActivityDate"] = pd.to_datetime(task["ActivityDate"], errors="coerce")
     last_activity = (
         task.groupby("AccountId")["ActivityDate"]
@@ -269,10 +288,26 @@ def detect_renewal_risk(
         .rename(columns={"Contract_Planned_End_Month__c": "next_end"})
     )
 
+    # 月額合計（アクティブ明細）
+    active_cli = contract_line[contract_line["IsActive__c"] == True].copy()
+    cc_acct = contract[["Id", "Account__c"]].drop_duplicates()
+    cli_merged = active_cli.merge(
+        cc_acct, left_on="CustomContract__c", right_on="Id", suffixes=("", "_cc")
+    )
+    monthly = (
+        cli_merged.groupby("Account__c")["UnitPrice__c"]
+        .sum()
+        .reset_index()
+        .rename(columns={"UnitPrice__c": "monthly_amount"})
+    )
+
     # Account に結合
-    acct = account[account["Type"] == "顧客"][["Id", "Name", "ID__c", "contractplan__c"]].copy()
+    acct = account[account["Type"] == "顧客"][
+        ["Id", "Name", "ID__c", "contractplan__c"]
+    ].copy()
     merged = acct.merge(next_renewal, left_on="Id", right_on="Account__c", how="inner")
     merged = merged.merge(last_activity, left_on="Id", right_on="AccountId", how="left")
+    merged = merged.merge(monthly, left_on="Id", right_on="Account__c", how="left")
 
     # フィルタ: 更新3ヶ月以内
     merged = merged[
@@ -280,20 +315,24 @@ def detect_renewal_risk(
         & (merged["next_end"].dt.date <= cutoff_date)
     ]
 
-    # フィルタ: ビジネス以上
+    # フィルタ: エンタープライズ/プレミアムのみ
     merged = merged[merged["contractplan__c"].isin(UPPER_PLANS)]
 
-    # フィルタ: 最終活動90日以上前 or 活動なし
+    # フィルタ: 能動的接触90日以上前 or 記録なし
     merged = merged[
         (merged["last_activity"].isna())
         | (merged["last_activity"].dt.date < silent_since)
     ]
 
-    # 日数計算・ソート
+    # 日数計算・ソート（プラン上位 → 金額大 → 更新日近い）
     merged["days_since"] = merged["last_activity"].apply(
         lambda x: (today - x.date()).days if pd.notna(x) else 9999
     )
-    merged = merged.sort_values(["next_end", "days_since"], ascending=[True, False])
+    merged["plan_rank"] = merged["contractplan__c"].map(PLAN_RANK).fillna(0)
+    merged["monthly_amount"] = merged["monthly_amount"].fillna(0)
+    merged = merged.sort_values(
+        ["plan_rank", "monthly_amount", "next_end"], ascending=[False, False, True]
+    )
 
     results = []
     for _, row in merged.iterrows():
@@ -309,6 +348,7 @@ def detect_renewal_risk(
             "next_end": row["next_end"].strftime("%Y-%m-%d"),
             "last_activity": last_act.strftime("%Y-%m-%d") if pd.notna(last_act) else None,
             "days_since_contact": int(row["days_since"]),
+            "monthly_amount": int(row["monthly_amount"]),
             "agency": info.get("agency", ""),
         })
 
@@ -362,13 +402,13 @@ def format_renewal_risk_message(renewal_risks: list) -> str:
         )
 
     lines = [
+        "<!channel>",
         f":warning: *更新リスク（接触空白）* ({today})",
-        f"更新3ヶ月以内 × 最終活動{CONTACT_SILENT_DAYS}日以上前 × ビジネス以上 | 検出: {count} 件",
+        f"更新3ヶ月以内 × 能動的接触{CONTACT_SILENT_DAYS}日以上前 × エンタープライズ/プレミアム | 検出: {count} 件",
         "",
     ]
     for a in renewal_risks[:RENEWAL_DISPLAY_MAX]:
         name_link = _sf_link(a["name"], a.get("sf_account_id", ""))
-        last = a["last_activity"] or "記録なし"
         days = a["days_since_contact"]
         days_str = f"{days}日前" if days < 9999 else "記録なし"
         plan_short = (
@@ -377,9 +417,10 @@ def format_renewal_risk_message(renewal_risks: list) -> str:
             .replace("(2024)", "")
             .replace("(2025)", "")
         )
+        amt = f"¥{a['monthly_amount']:,}" if a.get("monthly_amount") else "不明"
         lines.append(
-            f"  • *{name_link}* — {plan_short} / "
-            f"更新: {a['next_end']} / 最終活動: {days_str}"
+            f"  • *{name_link}* — {plan_short} / {amt}/月 / "
+            f"更新: {a['next_end']} / 最終接触: {days_str}"
         )
     if count > RENEWAL_DISPLAY_MAX:
         lines.append(f"  … 他 {count - RENEWAL_DISPLAY_MAX} 件")
@@ -392,6 +433,7 @@ def main():
     account = tables[("Extract", "Account")]
     task = tables[("Extract", "Task")]
     contract = tables[("Extract", "CustomContract__c")]
+    contract_line = tables[("Extract", "ContractLineItem__c")]
 
     company_map = build_company_map(account)
     result = detect_changes(usage, company_map)
@@ -402,7 +444,9 @@ def main():
     print(f"解約リスク（急減）: {churn_count} 件")
 
     # 更新リスク検出
-    renewal_risks = detect_renewal_risk(account, task, contract, company_map)
+    renewal_risks = detect_renewal_risk(
+        account, task, contract, contract_line, company_map
+    )
     result["alerts"]["renewal_risk"] = renewal_risks
 
     # Slack用メッセージを生成
