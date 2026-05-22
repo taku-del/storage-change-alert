@@ -403,8 +403,8 @@ def format_renewal_risk_message(renewal_risks: list) -> str:
 
     lines = [
         "<!channel>",
-        f":warning: *更新リスク（接触空白）* ({today})",
-        f"更新3ヶ月以内 × 能動的接触{CONTACT_SILENT_DAYS}日以上前 × エンタープライズ/プレミアム | 検出: {count} 件",
+        f":warning: *更新リスク（フォロー空白）* ({today})",
+        f"更新3ヶ月以内 × 直近{CONTACT_SILENT_DAYS}日間 電話・商談・打合せ・訪問等の活動なし × エンタープライズ/プレミアム | 検出: {count} 件",
         "",
     ]
     for a in renewal_risks[:RENEWAL_DISPLAY_MAX]:
