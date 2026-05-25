@@ -266,12 +266,12 @@ def detect_renewal_risk(
     task["Subject"] = task["Subject"].fillna("")
     kw_pattern = "|".join(ACTIVE_CONTACT_KEYWORDS)
     task = task[task["Subject"].str.contains(kw_pattern, case=False, regex=True)]
-    task["ActivityDate"] = pd.to_datetime(task["ActivityDate"], errors="coerce")
+    task["CreatedDate"] = pd.to_datetime(task["CreatedDate"], errors="coerce")
     last_activity = (
-        task.groupby("AccountId")["ActivityDate"]
+        task.groupby("AccountId")["CreatedDate"]
         .max()
         .reset_index()
-        .rename(columns={"ActivityDate": "last_activity"})
+        .rename(columns={"CreatedDate": "last_activity"})
     )
 
     # アクティブ契約の次回更新日
