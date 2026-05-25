@@ -53,6 +53,11 @@ RENEWAL_DISPLAY_MAX = 10
 SF_BASE_URL = "https://directcloud.my.salesforce.com"
 TABLEAU_DASHBOARD_URL = "https://prod-apnortheast-a.online.tableau.com/#/site/directcloud/workbooks/4681647"
 
+# 更新リスク通知から除外する取引先（SF Account ID）
+RENEWAL_RISK_EXCLUDE = {
+    '001BB000002zi9hYAA',  # ACMG株式会社
+}
+
 # エンタープライズ/プレミアム（通知対象）
 UPPER_PLANS = {
     'プレミアムプラン', 'エンタープライズプラン',
@@ -186,6 +191,10 @@ def detect_changes(usage: pd.DataFrame, company_map: dict) -> dict:
             "change_gb": change_gb,
             "change_pct": change_pct,
         }
+
+        # SF未紐付け（テスト/削除済みアカウント等）はスキップ
+        if not sf_id:
+            continue
 
         if (rate_prev >= SURGE_RATE_MIN
                 and change_pct >= SURGE_PCT_THRESHOLD
@@ -339,6 +348,8 @@ def detect_renewal_risk(
         cid = str(row.get("ID__c", ""))
         info = company_map.get(cid, {})
         sf_id = info.get("sf_account_id", str(row.get("Id", "")))
+        if sf_id in RENEWAL_RISK_EXCLUDE:
+            continue
         last_act = row["last_activity"]
 
         results.append({

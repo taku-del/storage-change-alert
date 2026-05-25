@@ -1,6 +1,6 @@
 {
-  "latest_date": "2026-05-21",
-  "compare_date": "2026-05-14",
+  "latest_date": "2026-05-24",
+  "compare_date": "2026-05-17",
   "alerts": {
     "surge": [
       {
@@ -9,12 +9,12 @@
         "name": "三和電子株式会社",
         "plan": "プレミアムプラン",
         "agency": "0012w00000HZdr8AAD",
-        "storage_used_gb": 10176.91,
+        "storage_used_gb": 10214.15,
         "volume_size_gb": 10240.0,
-        "rate_now": 99.4,
-        "rate_prev": 84.0,
-        "change_gb": 1575.71,
-        "change_pct": 15.4
+        "rate_now": 99.7,
+        "rate_prev": 87.7,
+        "change_gb": 1235.62,
+        "change_pct": 12.0
       },
       {
         "company_id": "nzxncxdw",
@@ -22,12 +22,12 @@
         "name": "株式会社MMGホールディングス",
         "plan": "アドバンスドプラン",
         "agency": "0012w00000HZdqxAAD",
-        "storage_used_gb": 954.07,
+        "storage_used_gb": 1006.88,
         "volume_size_gb": 1024.0,
-        "rate_now": 93.2,
-        "rate_prev": 81.1,
-        "change_gb": 123.56,
-        "change_pct": 12.1
+        "rate_now": 98.3,
+        "rate_prev": 86.9,
+        "change_gb": 117.02,
+        "change_pct": 11.4
       },
       {
         "company_id": "daysysnnktit",
@@ -35,12 +35,53 @@
         "name": "株式会社デイシス",
         "plan": "アドバンスドプラン",
         "agency": "0012w00000tuxBIAAY",
-        "storage_used_gb": 936.08,
+        "storage_used_gb": 940.12,
         "volume_size_gb": 1024.0,
-        "rate_now": 91.4,
-        "rate_prev": 80.8,
-        "change_gb": 108.57,
-        "change_pct": 10.6
+        "rate_now": 91.8,
+        "rate_prev": 82.2,
+        "change_gb": 98.35,
+        "change_pct": 9.6
+      },
+      {
+        "company_id": "zvymqgqy",
+        "sf_account_id": "001BB000004cOJOYA2",
+        "name": "オークラ輸送機株式会社",
+        "plan": "スタンダードプラン",
+        "agency": "",
+        "storage_used_gb": 482.76,
+        "volume_size_gb": 500.0,
+        "rate_now": 96.6,
+        "rate_prev": 90.0,
+        "change_gb": 32.93,
+        "change_pct": 6.6
+      },
+      {
+        "company_id": "lihdcorp",
+        "sf_account_id": "001BB000004rFgKYAU",
+        "name": "株式会社LIホールディングス",
+        "plan": "スタンダードプラン",
+        "agency": "0012w00000HZdqgAAD",
+        "storage_used_gb": 472.23,
+        "volume_size_gb": 500.0,
+        "rate_now": 94.4,
+        "rate_prev": 88.6,
+        "change_gb": 29.24,
+        "change_pct": 5.8
+      }
+    ],
+    "churn_risk": [
+      {
+        "company_id": "iwi4847",
+        "sf_account_id": "0012w00000HYm0HAAT",
+        "name": "株式会社インテリジェントウェイブ",
+        "plan": "スタンダードプラン",
+        "agency": "",
+        "storage_used_gb": 342.15,
+        "volume_size_gb": 550.0,
+        "rate_now": 62.2,
+        "rate_prev": 90.7,
+        "change_gb": -156.79,
+        "change_pct": -28.5
       },
       {
         "company_id": "kitomac",
@@ -48,53 +89,12 @@
         "name": "鬼頭工業株式会社",
         "plan": "スタンダードプラン",
         "agency": "0012w00000HZdqzAAD",
-        "storage_used_gb": 591.18,
+        "storage_used_gb": 413.84,
         "volume_size_gb": 600.0,
-        "rate_now": 98.5,
-        "rate_prev": 91.6,
-        "change_gb": 41.28,
-        "change_pct": 6.9
-      },
-      {
-        "company_id": "micron",
-        "sf_account_id": "0012w00000HYmVxAAL",
-        "name": "株式会社マイクロン",
-        "plan": "スタンダードプラン",
-        "agency": "",
-        "storage_used_gb": 540.56,
-        "volume_size_gb": 600.0,
-        "rate_now": 90.1,
-        "rate_prev": 84.8,
-        "change_gb": 32.05,
-        "change_pct": 5.3
-      },
-      {
-        "company_id": "kd2ndwin",
-        "sf_account_id": "001BB0000056Qh8YAE",
-        "name": "株式会社ケーダッシュセカンド",
-        "plan": "スタンダードプラン",
-        "agency": "0012w00000HZdqpAAD",
-        "storage_used_gb": 483.1,
-        "volume_size_gb": 500.0,
-        "rate_now": 96.6,
-        "rate_prev": 91.4,
-        "change_gb": 26.33,
-        "change_pct": 5.2
-      }
-    ],
-    "churn_risk": [
-      {
-        "company_id": "lbcxrmnx",
-        "sf_account_id": "",
-        "name": "lbcxrmnx",
-        "plan": "",
-        "agency": "",
-        "storage_used_gb": 12.02,
-        "volume_size_gb": 10.0,
-        "rate_now": 120.2,
-        "rate_prev": 439.0,
-        "change_gb": -31.88,
-        "change_pct": -318.8
+        "rate_now": 69.0,
+        "rate_prev": 92.6,
+        "change_gb": -141.99,
+        "change_pct": -23.6
       },
       {
         "company_id": "kirin3",
@@ -102,12 +102,25 @@
         "name": "株式会社ケアトピック（SUB23051618747）",
         "plan": "スタンダードプラン",
         "agency": "001Q800000ZR5SUIA1",
-        "storage_used_gb": 303.2,
+        "storage_used_gb": 303.44,
         "volume_size_gb": 500.0,
-        "rate_now": 60.6,
-        "rate_prev": 81.6,
-        "change_gb": -104.69,
+        "rate_now": 60.7,
+        "rate_prev": 81.7,
+        "change_gb": -104.94,
         "change_pct": -21.0
+      },
+      {
+        "company_id": "QSS1000045",
+        "sf_account_id": "001Q8000008ODPJIA4",
+        "name": "株式会社インターウェーブ（DCB2402178-025）",
+        "plan": "アドバンスドプラン",
+        "agency": "0012w00000HZdqqAAD",
+        "storage_used_gb": 480.15,
+        "volume_size_gb": 1024.0,
+        "rate_now": 46.9,
+        "rate_prev": 65.2,
+        "change_gb": -187.31,
+        "change_pct": -18.3
       },
       {
         "company_id": "BROADLINK",
@@ -115,11 +128,11 @@
         "name": "株式会社ブロードリンク",
         "plan": "スタンダードプラン",
         "agency": "",
-        "storage_used_gb": 340.38,
+        "storage_used_gb": 340.39,
         "volume_size_gb": 500.0,
         "rate_now": 68.1,
         "rate_prev": 85.9,
-        "change_gb": -89.05,
+        "change_gb": -89.26,
         "change_pct": -17.8
       },
       {
@@ -128,12 +141,25 @@
         "name": "楽天インサイト株式会社",
         "plan": "プレミアムプラン",
         "agency": "",
-        "storage_used_gb": 9257.76,
+        "storage_used_gb": 9261.35,
         "volume_size_gb": 10752.0,
         "rate_now": 86.1,
-        "rate_prev": 98.6,
-        "change_gb": -1344.86,
-        "change_pct": -12.5
+        "rate_prev": 101.2,
+        "change_gb": -1617.11,
+        "change_pct": -15.1
+      },
+      {
+        "company_id": "jfpkvswj",
+        "sf_account_id": "001BB0000040ipQYAQ",
+        "name": "株式会社サンテック",
+        "plan": "ビジネスプラン",
+        "agency": "0012w00000LgVC5AAN",
+        "storage_used_gb": 2562.07,
+        "volume_size_gb": 3072.0,
+        "rate_now": 83.4,
+        "rate_prev": 97.3,
+        "change_gb": -426.9,
+        "change_pct": -13.9
       },
       {
         "company_id": "fujichemi",
@@ -141,12 +167,12 @@
         "name": "富士化学産業株式会社",
         "plan": "スタンダードプラン",
         "agency": "0012w00000HZdqzAAD",
-        "storage_used_gb": 347.51,
+        "storage_used_gb": 348.62,
         "volume_size_gb": 500.0,
-        "rate_now": 69.5,
-        "rate_prev": 81.2,
-        "change_gb": -58.53,
-        "change_pct": -11.7
+        "rate_now": 69.7,
+        "rate_prev": 81.3,
+        "change_gb": -57.9,
+        "change_pct": -11.6
       }
     ],
     "renewal_risk": [
@@ -205,8 +231,8 @@
         "sf_account_id": "001Q8000009gHc1IAE",
         "plan": "エンタープライズプラン",
         "next_end": "2026-07-01",
-        "last_activity": "2025-06-10",
-        "days_since_contact": 349,
+        "last_activity": "2025-06-20",
+        "days_since_contact": 339,
         "monthly_amount": 360000,
         "agency": ""
       },
@@ -355,8 +381,8 @@
         "sf_account_id": "0012w00000auUqjAAE",
         "plan": "プレミアムプラン",
         "next_end": "2026-06-01",
-        "last_activity": "2025-05-17",
-        "days_since_contact": 373,
+        "last_activity": null,
+        "days_since_contact": 9999,
         "monthly_amount": 216000,
         "agency": "0012w00000coFRlAAM"
       },
@@ -395,8 +421,8 @@
         "sf_account_id": "001Q800000BF5sIIAT",
         "plan": "プレミアムプラン",
         "next_end": "2026-06-01",
-        "last_activity": "2026-02-05",
-        "days_since_contact": 109,
+        "last_activity": "2026-02-09",
+        "days_since_contact": 105,
         "monthly_amount": 216000,
         "agency": ""
       },
@@ -425,8 +451,8 @@
         "sf_account_id": "001BB000004P4mFYAS",
         "plan": "プレミアムプラン",
         "next_end": "2026-07-01",
-        "last_activity": "2025-08-26",
-        "days_since_contact": 272,
+        "last_activity": "2025-08-29",
+        "days_since_contact": 269,
         "monthly_amount": 216000,
         "agency": "0012w00000LgVC5AAN"
       },
@@ -542,11 +568,11 @@
       }
     ]
   },
-  "total_companies": 7101,
-  "generated_at": "2026-05-25T11:41:59.704453",
+  "total_companies": 7098,
+  "generated_at": "2026-05-25T12:11:22.255843",
   "slack_messages": {
-    "surge": "<!channel>\n:chart_with_upwards_trend: *高使用率帯で急増* (2026-05-21)\n比較期間: 2026-05-14 → 2026-05-21 | 検出: 6 件\n条件: 使用率80%以上 かつ +5pt以上 かつ +20GB以上\n\n  • *<https://directcloud.my.salesforce.com/001Q800000RvUkzIAF|三和電子株式会社>* — +1575.71GB / +15.4pt (84.0% → 99.4%)  [10176.91/10240.0GB]\n  • *<https://directcloud.my.salesforce.com/001Q800000WunjZIAR|株式会社MMGホールディングス>* — +123.56GB / +12.1pt (81.1% → 93.2%)  [954.07/1024.0GB]\n  • *<https://directcloud.my.salesforce.com/001Q800000BV3EbIAL|株式会社デイシス>* — +108.57GB / +10.6pt (80.8% → 91.4%)  [936.08/1024.0GB]\n  • *<https://directcloud.my.salesforce.com/0012w00000HYmGxAAL|鬼頭工業株式会社>* — +41.28GB / +6.9pt (91.6% → 98.5%)  [591.18/600.0GB]\n  • *<https://directcloud.my.salesforce.com/0012w00000HYmVxAAL|株式会社マイクロン>* — +32.05GB / +5.3pt (84.8% → 90.1%)  [540.56/600.0GB]\n  • *<https://directcloud.my.salesforce.com/001BB0000056Qh8YAE|株式会社ケーダッシュセカンド>* — +26.33GB / +5.2pt (91.4% → 96.6%)  [483.1/500.0GB]",
-    "churn_risk": "<!channel>\n:chart_with_downwards_trend: *解約リスク（ストレージ急減）* (2026-05-21)\n比較期間: 2026-05-14 → 2026-05-21 | 検出: 5 件\n条件: 使用率50%以上から -10pt以上 かつ -20GB以上\n\n  • *lbcxrmnx* — -31.88GB / -318.8pt (439.0% → 120.2%)  [12.02/10.0GB]\n  • *<https://directcloud.my.salesforce.com/001BB000004stZpYAI|株式会社ケアトピック（SUB23051618747）>* — -104.69GB / -21.0pt (81.6% → 60.6%)  [303.2/500.0GB]\n  • *<https://directcloud.my.salesforce.com/001BB000003fuVRYAY|株式会社ブロードリンク>* — -89.05GB / -17.8pt (85.9% → 68.1%)  [340.38/500.0GB]\n  • *<https://directcloud.my.salesforce.com/001BB0000052RI3YAM|楽天インサイト株式会社>* — -1344.86GB / -12.5pt (98.6% → 86.1%)  [9257.76/10752.0GB]\n  • *<https://directcloud.my.salesforce.com/0012w00000HYm2IAAT|富士化学産業株式会社>* — -58.53GB / -11.7pt (81.2% → 69.5%)  [347.51/500.0GB]\n\n:bar_chart: <https://prod-apnortheast-a.online.tableau.com/#/site/directcloud/workbooks/4681647|Tableauダッシュボードで詳細確認>",
-    "renewal_risk": "<!channel>\n:warning: *更新リスク（フォロー空白）* (2026-05-25)\n更新3ヶ月以内 × 直近90日間 電話・商談・打合せ・訪問等の活動なし × エンタープライズ/プレミアム | 検出: 39 件\n\n  • *<https://directcloud.my.salesforce.com/001BB000002zi9hYAA|ACMG株式会社>* — エンタープライズ / ¥1,046,400/月 / 更新: 2026-07-01 / 最終接触: 記録なし\n  • *<https://directcloud.my.salesforce.com/001BB000002pyy0YAA|株式会社ベネフィット・ワン>* — エンタープライズ / ¥480,000/月 / 更新: 2026-08-01 / 最終接触: 178日前\n  • *<https://directcloud.my.salesforce.com/0012w00000HYmDpAAL|新光電気工業株式会社>* — エンタープライズ / ¥360,600/月 / 更新: 2026-06-01 / 最終接触: 279日前\n  • *<https://directcloud.my.salesforce.com/0012w00000HYmX0AAL|株式会社大林組>* — エンタープライズ / ¥360,000/月 / 更新: 2026-06-01 / 最終接触: 記録なし\n  • *<https://directcloud.my.salesforce.com/001BB000002qSzdYAE|味の素冷凍食品株式会社>* — エンタープライズ / ¥360,000/月 / 更新: 2026-07-01 / 最終接触: 95日前\n  • *<https://directcloud.my.salesforce.com/001Q8000009gHc1IAE|北恵株式会社>* — エンタープライズ / ¥360,000/月 / 更新: 2026-07-01 / 最終接触: 349日前\n  • *<https://directcloud.my.salesforce.com/0012w00000HYm5eAAD|株式会社JM>* — エンタープライズ / ¥360,000/月 / 更新: 2026-08-01 / 最終接触: 記録なし\n  • *<https://directcloud.my.salesforce.com/001BB000003QHDGYA4|日本コンサルタンツ株式会社（DCB2201625）>* — エンタープライズ / ¥360,000/月 / 更新: 2026-08-01 / 最終接触: 200日前\n  • *<https://directcloud.my.salesforce.com/001BB000005NMRWYA4|株式会社富士通ゼネラル（DCB2402346-006）>* — エンタープライズ / ¥324,500/月 / 更新: 2026-06-01 / 最終接触: 174日前\n  • *<https://directcloud.my.salesforce.com/001BB0000049KlbYAE|北陸電力株式会社>* — エンタープライズ / ¥300,000/月 / 更新: 2026-06-01 / 最終接触: 329日前\n  … 他 29 件"
+    "surge": "<!channel>\n:chart_with_upwards_trend: *高使用率帯で急増* (2026-05-24)\n比較期間: 2026-05-17 → 2026-05-24 | 検出: 5 件\n条件: 使用率80%以上 かつ +5pt以上 かつ +20GB以上\n\n  • *<https://directcloud.my.salesforce.com/001Q800000RvUkzIAF|三和電子株式会社>* — +1235.62GB / +12.0pt (87.7% → 99.7%)  [10214.15/10240.0GB]\n  • *<https://directcloud.my.salesforce.com/001Q800000WunjZIAR|株式会社MMGホールディングス>* — +117.02GB / +11.4pt (86.9% → 98.3%)  [1006.88/1024.0GB]\n  • *<https://directcloud.my.salesforce.com/001Q800000BV3EbIAL|株式会社デイシス>* — +98.35GB / +9.6pt (82.2% → 91.8%)  [940.12/1024.0GB]\n  • *<https://directcloud.my.salesforce.com/001BB000004cOJOYA2|オークラ輸送機株式会社>* — +32.93GB / +6.6pt (90.0% → 96.6%)  [482.76/500.0GB]\n  • *<https://directcloud.my.salesforce.com/001BB000004rFgKYAU|株式会社LIホールディングス>* — +29.24GB / +5.8pt (88.6% → 94.4%)  [472.23/500.0GB]",
+    "churn_risk": "<!channel>\n:chart_with_downwards_trend: *解約リスク（ストレージ急減）* (2026-05-24)\n比較期間: 2026-05-17 → 2026-05-24 | 検出: 8 件\n条件: 使用率50%以上から -10pt以上 かつ -20GB以上\n\n  • *<https://directcloud.my.salesforce.com/0012w00000HYm0HAAT|株式会社インテリジェントウェイブ>* — -156.79GB / -28.5pt (90.7% → 62.2%)  [342.15/550.0GB]\n  • *<https://directcloud.my.salesforce.com/0012w00000HYmGxAAL|鬼頭工業株式会社>* — -141.99GB / -23.6pt (92.6% → 69.0%)  [413.84/600.0GB]\n  • *<https://directcloud.my.salesforce.com/001BB000004stZpYAI|株式会社ケアトピック（SUB23051618747）>* — -104.94GB / -21.0pt (81.7% → 60.7%)  [303.44/500.0GB]\n  • *<https://directcloud.my.salesforce.com/001Q8000008ODPJIA4|株式会社インターウェーブ（DCB2402178-025）>* — -187.31GB / -18.3pt (65.2% → 46.9%)  [480.15/1024.0GB]\n  • *<https://directcloud.my.salesforce.com/001BB000003fuVRYAY|株式会社ブロードリンク>* — -89.26GB / -17.8pt (85.9% → 68.1%)  [340.39/500.0GB]\n  • *<https://directcloud.my.salesforce.com/001BB0000052RI3YAM|楽天インサイト株式会社>* — -1617.11GB / -15.1pt (101.2% → 86.1%)  [9261.35/10752.0GB]\n  • *<https://directcloud.my.salesforce.com/001BB0000040ipQYAQ|株式会社サンテック>* — -426.9GB / -13.9pt (97.3% → 83.4%)  [2562.07/3072.0GB]\n  • *<https://directcloud.my.salesforce.com/0012w00000HYm2IAAT|富士化学産業株式会社>* — -57.9GB / -11.6pt (81.3% → 69.7%)  [348.62/500.0GB]\n\n:bar_chart: <https://prod-apnortheast-a.online.tableau.com/#/site/directcloud/workbooks/4681647|Tableauダッシュボードで詳細確認>",
+    "renewal_risk": "<!channel>\n:warning: *更新リスク（フォロー空白）* (2026-05-25)\n更新3ヶ月以内 × 直近90日間 電話・商談・打合せ・訪問等の活動なし × エンタープライズ/プレミアム | 検出: 39 件\n\n  • *<https://directcloud.my.salesforce.com/001BB000002zi9hYAA|ACMG株式会社>* — エンタープライズ / ¥1,046,400/月 / 更新: 2026-07-01 / 最終接触: 記録なし\n  • *<https://directcloud.my.salesforce.com/001BB000002pyy0YAA|株式会社ベネフィット・ワン>* — エンタープライズ / ¥480,000/月 / 更新: 2026-08-01 / 最終接触: 178日前\n  • *<https://directcloud.my.salesforce.com/0012w00000HYmDpAAL|新光電気工業株式会社>* — エンタープライズ / ¥360,600/月 / 更新: 2026-06-01 / 最終接触: 279日前\n  • *<https://directcloud.my.salesforce.com/0012w00000HYmX0AAL|株式会社大林組>* — エンタープライズ / ¥360,000/月 / 更新: 2026-06-01 / 最終接触: 記録なし\n  • *<https://directcloud.my.salesforce.com/001BB000002qSzdYAE|味の素冷凍食品株式会社>* — エンタープライズ / ¥360,000/月 / 更新: 2026-07-01 / 最終接触: 95日前\n  • *<https://directcloud.my.salesforce.com/001Q8000009gHc1IAE|北恵株式会社>* — エンタープライズ / ¥360,000/月 / 更新: 2026-07-01 / 最終接触: 339日前\n  • *<https://directcloud.my.salesforce.com/0012w00000HYm5eAAD|株式会社JM>* — エンタープライズ / ¥360,000/月 / 更新: 2026-08-01 / 最終接触: 記録なし\n  • *<https://directcloud.my.salesforce.com/001BB000003QHDGYA4|日本コンサルタンツ株式会社（DCB2201625）>* — エンタープライズ / ¥360,000/月 / 更新: 2026-08-01 / 最終接触: 200日前\n  • *<https://directcloud.my.salesforce.com/001BB000005NMRWYA4|株式会社富士通ゼネラル（DCB2402346-006）>* — エンタープライズ / ¥324,500/月 / 更新: 2026-06-01 / 最終接触: 174日前\n  • *<https://directcloud.my.salesforce.com/001BB0000049KlbYAE|北陸電力株式会社>* — エンタープライズ / ¥300,000/月 / 更新: 2026-06-01 / 最終接触: 329日前\n  … 他 29 件"
   }
 }
