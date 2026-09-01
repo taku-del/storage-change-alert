@@ -1,5 +1,5 @@
 """
-ストレージ使用量の変化検知 + 更新リスク検知スクリプト
+ストレージ使用量の変化検知 + 更新前フォロー対象の検知スクリプト
 
 Tableau Cloud の CS_利用統計_統合 から直近データを取得し、
 前週比で大きな変化があった顧客、および更新間近で接触空白のある顧客を検出。
@@ -9,8 +9,8 @@ Slack投稿は Claude Remote Trigger が MCP 経由で行う。
 
 検出カテゴリ:
   1. 高使用率帯で急増: 既に80%以上 かつ 使用率+5pt以上 かつ 変化量20GB以上
-  2. 解約リスク（急減）: 元々50%以上から 使用率-10pt以上 かつ 変化量20GB以上
-  3. 更新リスク（接触空白）: 更新3ヶ月以内 × 能動的接触90日以上前 × エンタープライズ/プレミアム
+  2. 使用量の大きな減少: 元々50%以上から 使用率-10pt以上 かつ 変化量20GB以上
+  3. 更新前フォロー対象（接点空白）: 更新3ヶ月以内 × 能動的接触90日以上前 × エンタープライズ/プレミアム
 
 環境変数:
   TABLEAU_PAT_SECRET  — Tableau Cloud PAT
@@ -45,7 +45,7 @@ DROP_RATE_MIN = 50
 LOOKBACK_DAYS = 7
 SLACK_DISPLAY_MAX = 10
 
-# ── 更新リスク閾値 ──
+# ── 更新前フォロー対象の閾値 ──
 RENEWAL_MONTHS_AHEAD = 3
 CONTACT_SILENT_DAYS = 90
 RENEWAL_DISPLAY_MAX = 10
@@ -53,7 +53,7 @@ RENEWAL_DISPLAY_MAX = 10
 SF_BASE_URL = "https://directcloud.my.salesforce.com"
 TABLEAU_DASHBOARD_URL = "https://prod-apnortheast-a.online.tableau.com/#/site/directcloud/workbooks/4681647"
 
-# 更新リスク通知から除外する取引先（SF Account ID）
+# 更新前フォロー通知から除外する取引先（SF Account ID）
 RENEWAL_RISK_EXCLUDE = {
     '001BB000002zi9hYAA',  # ACMG株式会社
 }
@@ -363,7 +363,7 @@ def detect_renewal_risk(
             "agency": info.get("agency", ""),
         })
 
-    print(f"[検出] 更新リスク: {len(results)} 件")
+    print(f"[検出] 更新前フォロー対象: {len(results)} 件")
     return results
 
 
@@ -376,14 +376,14 @@ def format_churn_message(result: dict) -> str:
     if count == 0:
         return (
             f"<!channel>\n"
-            f":large_green_circle: *解約リスク検知* ({latest})\n"
+            f":large_green_circle: *使用量の大きな減少* ({latest})\n"
             f"比較期間: {compare} → {latest}\n"
             f"該当なし"
         )
 
     lines = [
         "<!channel>",
-        f":chart_with_downwards_trend: *解約リスク（ストレージ急減）* ({latest})",
+        f":chart_with_downwards_trend: *使用量の大きな減少（フォロー対象）* ({latest})",
         f"比較期間: {compare} → {latest} | 検出: {count} 件",
         f"条件: 使用率50%以上から -10pt以上 かつ -20GB以上",
         "",
@@ -408,13 +408,13 @@ def format_renewal_risk_message(renewal_risks: list) -> str:
 
     if count == 0:
         return (
-            f":large_green_circle: *更新リスク（接触空白）* ({today})\n"
+            f":large_green_circle: *更新前の接点確認* ({today})\n"
             f"該当なし"
         )
 
     lines = [
         "<!channel>",
-        f":warning: *更新リスク（フォロー空白）* ({today})",
+        f":warning: *更新前で接点が空いている先（重点フォロー対象）* ({today})",
         f"更新3ヶ月以内 × 直近{CONTACT_SILENT_DAYS}日間 電話・商談・打合せ・訪問等の活動なし × エンタープライズ/プレミアム | 検出: {count} 件",
         "",
     ]
@@ -438,8 +438,31 @@ def format_renewal_risk_message(renewal_risks: list) -> str:
     return "\n".join(lines)
 
 
+def load_from_hyper(hyper_path: str) -> dict:
+    """ローカル .hyper ファイルからテーブルを読み込む"""
+    print(f"[ローカル] {hyper_path} を読み込み中...")
+    tables = pantab.frames_from_hyper(hyper_path)
+    print(f"[ローカル] {len(tables)} テーブル読み込み完了")
+    return tables
+
+
 def main():
-    tables = download_extract()
+    # --hyper-path が指定された場合はローカル .hyper を使う
+    hyper_path = None
+    for i, arg in enumerate(sys.argv[1:], 1):
+        if arg == "--hyper-path" and i < len(sys.argv) - 1:
+            hyper_path = sys.argv[i + 1]
+        elif arg.startswith("--hyper-path="):
+            hyper_path = arg.split("=", 1)[1]
+
+    if hyper_path:
+        if not os.path.exists(hyper_path):
+            print(f"ERROR: {hyper_path} が見つかりません", file=sys.stderr)
+            sys.exit(1)
+        tables = load_from_hyper(hyper_path)
+    else:
+        tables = download_extract()
+
     usage = tables[("Extract", "usage_statistics")]
     account = tables[("Extract", "Account")]
     task = tables[("Extract", "Task")]
@@ -452,9 +475,9 @@ def main():
     surge_count = len(result["alerts"]["surge"])
     churn_count = len(result["alerts"]["churn_risk"])
     print(f"\n高使用率帯で急増: {surge_count} 件")
-    print(f"解約リスク（急減）: {churn_count} 件")
+    print(f"使用量の大きな減少: {churn_count} 件")
 
-    # 更新リスク検出
+    # 更新前フォロー対象の検出
     renewal_risks = detect_renewal_risk(
         account, task, contract, contract_line, company_map
     )
