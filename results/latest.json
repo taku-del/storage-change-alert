@@ -1,35 +1,100 @@
 {
-  "latest_date": "2026-08-31",
-  "compare_date": "2026-08-24",
+  "latest_date": "2026-09-06",
+  "compare_date": "2026-08-30",
   "alerts": {
     "surge": [
       {
-        "company_id": "interwave",
-        "sf_account_id": "0012w00000HYm20AAD",
-        "name": "株式会社インターウェーブ（DCB1700233）",
+        "company_id": "nipponzoki",
+        "sf_account_id": "0012w00000HYmKGAA1",
+        "name": "日本臓器製薬株式会社",
         "plan": "スタンダードプラン",
         "agency": "",
-        "storage_used_gb": 493.97,
+        "storage_used_gb": 529.14,
+        "volume_size_gb": 500.0,
+        "rate_now": 105.8,
+        "rate_prev": 97.2,
+        "change_gb": 43.07,
+        "change_pct": 8.6
+      },
+      {
+        "company_id": "qualitysoft",
+        "sf_account_id": "0012w00000HYm5yAAD",
+        "name": "クオリティソフト株式会社",
+        "plan": "スタンダードプラン",
+        "agency": "0012w00000HZdqqAAD",
+        "storage_used_gb": 493.77,
         "volume_size_gb": 500.0,
         "rate_now": 98.8,
-        "rate_prev": 93.0,
-        "change_gb": 29.12,
-        "change_pct": 5.8
+        "rate_prev": 93.8,
+        "change_gb": 24.58,
+        "change_pct": 5.0
       }
     ],
     "churn_risk": [
       {
-        "company_id": "indexconsulting",
-        "sf_account_id": "0012w00000HYm0WAAT",
-        "name": "株式会社インデックスコンサルティング",
+        "company_id": "kitomac",
+        "sf_account_id": "0012w00000HYmGxAAL",
+        "name": "鬼頭工業株式会社",
         "plan": "スタンダードプラン",
+        "agency": "0012w00000HZdqpAAD",
+        "storage_used_gb": 25.81,
+        "volume_size_gb": 500.0,
+        "rate_now": 5.2,
+        "rate_prev": 100.5,
+        "change_gb": -476.49,
+        "change_pct": -95.3
+      },
+      {
+        "company_id": "daitohshokken",
+        "sf_account_id": "0012w00000HYmEoAAL",
+        "name": "大東食研株式会社",
+        "plan": "スタンダードプラン",
+        "agency": "0012w00000HZdquAAD",
+        "storage_used_gb": 395.9,
+        "volume_size_gb": 500.0,
+        "rate_now": 79.2,
+        "rate_prev": 116.8,
+        "change_gb": -188.09,
+        "change_pct": -37.6
+      },
+      {
+        "company_id": "mgzzhbgq",
+        "sf_account_id": "001BB000002SHxaYAG",
+        "name": "株式会社DMM FinTech",
+        "plan": "アドバンスドプラン",
         "agency": "",
-        "storage_used_gb": 328.13,
-        "volume_size_gb": 600.0,
-        "rate_now": 54.7,
-        "rate_prev": 68.0,
-        "change_gb": -79.78,
-        "change_pct": -13.3
+        "storage_used_gb": 456.69,
+        "volume_size_gb": 1024.0,
+        "rate_now": 44.6,
+        "rate_prev": 74.4,
+        "change_gb": -304.84,
+        "change_pct": -29.8
+      },
+      {
+        "company_id": "sabohani",
+        "sf_account_id": "0012w00000HYmF2AAL",
+        "name": "株式会社サボハニ",
+        "plan": "アドバンスドプラン",
+        "agency": "",
+        "storage_used_gb": 590.63,
+        "volume_size_gb": 1024.0,
+        "rate_now": 57.7,
+        "rate_prev": 81.4,
+        "change_gb": -243.2,
+        "change_pct": -23.7
+      },
+      {
+        "company_id": "daisankasei",
+        "sf_account_id": "001Q800000APGC3IAP",
+        "name": "第三化成株式会社",
+        "plan": "ビジネスプラン",
+        "agency": "",
+        "storage_used_gb": 1533.2,
+        "volume_size_gb": 3072.0,
+        "rate_now": 49.9,
+        "rate_prev": 71.0,
+        "change_gb": -646.78,
+        "change_pct": -21.1
       }
     ],
     "renewal_risk": [
@@ -54,13 +119,33 @@
         "agency": "0012w00000LgVC5AAN"
       },
       {
-        "name": "公益財団法人東京しごと財団",
-        "sf_account_id": "001Q800000MUa2zIAD",
+        "name": "株式会社SHIFT（DCB1800369）",
+        "sf_account_id": "0012w00000HYmEXAA1",
         "plan": "エンタープライズプラン",
-        "next_end": "2026-09-01",
-        "last_activity": "2026-02-12",
-        "days_since_contact": 201,
-        "monthly_amount": 360000,
+        "next_end": "2026-12-01",
+        "last_activity": null,
+        "days_since_contact": 9999,
+        "monthly_amount": 432000,
+        "agency": ""
+      },
+      {
+        "name": "国土開発工業株式会社",
+        "sf_account_id": "001BB000002wR5tYAE",
+        "plan": "エンタープライズプラン",
+        "next_end": "2026-12-01",
+        "last_activity": null,
+        "days_since_contact": 9999,
+        "monthly_amount": 432000,
+        "agency": "0012w00000HZdqxAAD"
+      },
+      {
+        "name": "株式会社ヤナセ",
+        "sf_account_id": "001Q800000Dyz7aIAB",
+        "plan": "エンタープライズプラン",
+        "next_end": "2026-12-01",
+        "last_activity": "2025-09-24",
+        "days_since_contact": 348,
+        "monthly_amount": 432000,
         "agency": ""
       },
       {
@@ -79,7 +164,7 @@
         "plan": "エンタープライズプラン",
         "next_end": "2026-11-01",
         "last_activity": "2026-05-29",
-        "days_since_contact": 95,
+        "days_since_contact": 101,
         "monthly_amount": 360000,
         "agency": ""
       },
@@ -89,19 +174,9 @@
         "plan": "エンタープライズプラン",
         "next_end": "2026-11-01",
         "last_activity": "2026-02-17",
-        "days_since_contact": 196,
+        "days_since_contact": 202,
         "monthly_amount": 360000,
         "agency": ""
-      },
-      {
-        "name": "日本赤十字社（DCB2101272-021）",
-        "sf_account_id": "0012w00000fTaeAAAS",
-        "plan": "エンタープライズプラン",
-        "next_end": "2026-09-01",
-        "last_activity": null,
-        "days_since_contact": 9999,
-        "monthly_amount": 320000,
-        "agency": "0012w00000HYmI3AAL"
       },
       {
         "name": "パナソニックエイジフリー株式会社",
@@ -109,18 +184,18 @@
         "plan": "エンタープライズプラン",
         "next_end": "2026-11-01",
         "last_activity": "2026-01-07",
-        "days_since_contact": 237,
+        "days_since_contact": 243,
         "monthly_amount": 300000,
         "agency": ""
       },
       {
-        "name": "浅海電気株式会社",
-        "sf_account_id": "0012w00000hh1kTAAQ",
+        "name": "株式会社プロスパイラ",
+        "sf_account_id": "001BB000005mAvNYAU",
         "plan": "エンタープライズプラン",
-        "next_end": "2026-09-01",
-        "last_activity": null,
-        "days_since_contact": 9999,
-        "monthly_amount": 198000,
+        "next_end": "2026-12-01",
+        "last_activity": "2025-11-13",
+        "days_since_contact": 298,
+        "monthly_amount": 288000,
         "agency": ""
       },
       {
@@ -134,24 +209,14 @@
         "agency": "0012w00000LgVC5AAN"
       },
       {
-        "name": "ファーマライズホールディングス株式会社",
-        "sf_account_id": "001BB000002ryimYAA",
+        "name": "株式会社ハートス",
+        "sf_account_id": "001Q80000052yThIAI",
         "plan": "プレミアムプラン",
-        "next_end": "2026-09-01",
-        "last_activity": "2025-09-24",
-        "days_since_contact": 342,
-        "monthly_amount": 336000,
-        "agency": "0012w00000HZdqsAAD"
-      },
-      {
-        "name": "株式会社フォーバル",
-        "sf_account_id": "001Q800000Auj7xIAB",
-        "plan": "プレミアムプラン",
-        "next_end": "2026-09-01",
-        "last_activity": "2025-11-21",
-        "days_since_contact": 284,
-        "monthly_amount": 336000,
-        "agency": "0012w00000HZdqxAAD"
+        "next_end": "2026-12-01",
+        "last_activity": "2026-05-28",
+        "days_since_contact": 102,
+        "monthly_amount": 350000,
+        "agency": "0012w00000LgVC5AAN"
       },
       {
         "name": "日本自動化開発株式会社",
@@ -159,7 +224,7 @@
         "plan": "プレミアムプラン",
         "next_end": "2026-10-01",
         "last_activity": "2026-04-07",
-        "days_since_contact": 147,
+        "days_since_contact": 153,
         "monthly_amount": 336000,
         "agency": "0012w00000LgVC5AAN"
       },
@@ -169,7 +234,7 @@
         "plan": "プレミアムプラン",
         "next_end": "2026-11-01",
         "last_activity": "2026-02-25",
-        "days_since_contact": 188,
+        "days_since_contact": 194,
         "monthly_amount": 336000,
         "agency": "0012w00000HZdr8AAD"
       },
@@ -184,14 +249,64 @@
         "agency": ""
       },
       {
-        "name": "プロスペックAZ株式会社",
-        "sf_account_id": "001Q800000BKIdbIAH",
+        "name": "鈴縫工業株式会社",
+        "sf_account_id": "0012w00000HYmPZAA1",
         "plan": "プレミアムプラン",
-        "next_end": "2026-09-01",
-        "last_activity": "2026-05-14",
-        "days_since_contact": 110,
+        "next_end": "2026-12-01",
+        "last_activity": null,
+        "days_since_contact": 9999,
         "monthly_amount": 260000,
-        "agency": "0012w00000tuxBIAAY"
+        "agency": ""
+      },
+      {
+        "name": "澁谷工業株式会社",
+        "sf_account_id": "0012w00000awXkQAAU",
+        "plan": "プレミアムプラン",
+        "next_end": "2026-12-01",
+        "last_activity": null,
+        "days_since_contact": 9999,
+        "monthly_amount": 260000,
+        "agency": ""
+      },
+      {
+        "name": "SREホールディングス株式会社",
+        "sf_account_id": "0012w00000ipQUZAA2",
+        "plan": "プレミアムプラン",
+        "next_end": "2026-12-01",
+        "last_activity": "2025-10-23",
+        "days_since_contact": 319,
+        "monthly_amount": 260000,
+        "agency": "0012w00000LgVC5AAN"
+      },
+      {
+        "name": "株式会社デベロップ",
+        "sf_account_id": "0012w00000ir0mJAAQ",
+        "plan": "プレミアムプラン",
+        "next_end": "2026-12-01",
+        "last_activity": "2025-12-19",
+        "days_since_contact": 262,
+        "monthly_amount": 260000,
+        "agency": ""
+      },
+      {
+        "name": "株式会社ティエフケー",
+        "sf_account_id": "001BB000004avxcYAA",
+        "plan": "プレミアムプラン",
+        "next_end": "2026-12-01",
+        "last_activity": null,
+        "days_since_contact": 9999,
+        "monthly_amount": 260000,
+        "agency": "0012w00000coFRlAAM"
+      },
+      {
+        "name": "エネテクホールディングス株式会社",
+        "sf_account_id": "001BB000005335QYAQ",
+        "plan": "プレミアムプラン",
+        "next_end": "2026-12-01",
+        "last_activity": "2025-12-25",
+        "days_since_contact": 256,
+        "monthly_amount": 260000,
+        "agency": ""
       },
       {
         "name": "楽天インサイト株式会社",
@@ -204,52 +319,12 @@
         "agency": ""
       },
       {
-        "name": "株式会社日本セレモニー",
-        "sf_account_id": "001BB000005LhVPYA0",
-        "plan": "プレミアムプラン",
-        "next_end": "2026-09-01",
-        "last_activity": null,
-        "days_since_contact": 9999,
-        "monthly_amount": 216600,
-        "agency": ""
-      },
-      {
-        "name": "株式会社北海電工",
-        "sf_account_id": "0012w00000HYmG1AAL",
-        "plan": "プレミアムプラン",
-        "next_end": "2026-09-01",
-        "last_activity": "2025-12-09",
-        "days_since_contact": 266,
-        "monthly_amount": 216000,
-        "agency": "0012w00000HZdr2AAD"
-      },
-      {
-        "name": "株式会社ゴール",
-        "sf_account_id": "001BB0000052L3DYAU",
-        "plan": "プレミアムプラン",
-        "next_end": "2026-09-01",
-        "last_activity": null,
-        "days_since_contact": 9999,
-        "monthly_amount": 216000,
-        "agency": "0012w00000HZdqpAAD"
-      },
-      {
-        "name": "株式会社ジャバラ",
-        "sf_account_id": "001Q800000KJ8uWIAT",
-        "plan": "プレミアムプラン",
-        "next_end": "2026-09-01",
-        "last_activity": "2025-12-09",
-        "days_since_contact": 266,
-        "monthly_amount": 216000,
-        "agency": "0012w00000LgVC5AAN"
-      },
-      {
         "name": "社会福祉法人広島県同胞援護財団",
         "sf_account_id": "0012w00000NYw3xAAD",
         "plan": "プレミアムプラン",
         "next_end": "2026-10-01",
         "last_activity": "2026-03-09",
-        "days_since_contact": 176,
+        "days_since_contact": 182,
         "monthly_amount": 216000,
         "agency": "0012w00000LgVC5AAN"
       },
@@ -269,7 +344,7 @@
         "plan": "プレミアムプラン",
         "next_end": "2026-10-01",
         "last_activity": "2025-11-06",
-        "days_since_contact": 299,
+        "days_since_contact": 305,
         "monthly_amount": 216000,
         "agency": "0012w00000HZdqqAAD"
       },
@@ -282,16 +357,6 @@
         "days_since_contact": 9999,
         "monthly_amount": 216000,
         "agency": "0012w00000kCDnOAAW"
-      },
-      {
-        "name": "日本コロムビア株式会社（DCB2201675）",
-        "sf_account_id": "001BB000002yq89YAA",
-        "plan": "プレミアムプラン",
-        "next_end": "2026-10-01",
-        "last_activity": "2025-10-23",
-        "days_since_contact": 313,
-        "monthly_amount": 216000,
-        "agency": ""
       },
       {
         "name": "株式会社コマデン",
@@ -319,7 +384,7 @@
         "plan": "プレミアムプラン",
         "next_end": "2026-10-01",
         "last_activity": "2026-01-27",
-        "days_since_contact": 217,
+        "days_since_contact": 223,
         "monthly_amount": 216000,
         "agency": "0012w00000tuxBIAAY"
       },
@@ -329,7 +394,7 @@
         "plan": "プレミアムプラン",
         "next_end": "2026-11-01",
         "last_activity": "2026-05-11",
-        "days_since_contact": 113,
+        "days_since_contact": 119,
         "monthly_amount": 216000,
         "agency": "0012w00000HZdqpAAD"
       },
@@ -389,7 +454,7 @@
         "plan": "プレミアムプラン",
         "next_end": "2026-11-01",
         "last_activity": "2024-09-02",
-        "days_since_contact": 729,
+        "days_since_contact": 735,
         "monthly_amount": 216000,
         "agency": "0012w00000tuxBIAAY"
       },
@@ -399,7 +464,7 @@
         "plan": "プレミアムプラン",
         "next_end": "2026-11-01",
         "last_activity": "2026-03-31",
-        "days_since_contact": 154,
+        "days_since_contact": 160,
         "monthly_amount": 216000,
         "agency": ""
       },
@@ -409,7 +474,7 @@
         "plan": "プレミアムプラン",
         "next_end": "2026-11-01",
         "last_activity": "2026-04-16",
-        "days_since_contact": 138,
+        "days_since_contact": 144,
         "monthly_amount": 216000,
         "agency": "001Q800000ZR5SUIA1"
       },
@@ -419,19 +484,9 @@
         "plan": "プレミアムプラン",
         "next_end": "2026-11-01",
         "last_activity": "2026-01-07",
-        "days_since_contact": 237,
+        "days_since_contact": 243,
         "monthly_amount": 216000,
         "agency": "0012w00000HZdr8AAD"
-      },
-      {
-        "name": "神奈川臨海鉄道株式会社",
-        "sf_account_id": "0012w00000HYmX4AAL",
-        "plan": "プレミアムプラン",
-        "next_end": "2026-09-01",
-        "last_activity": null,
-        "days_since_contact": 9999,
-        "monthly_amount": 205200,
-        "agency": ""
       },
       {
         "name": "株式会社シーアンドエーソリューション",
@@ -439,29 +494,9 @@
         "plan": "プレミアムプラン",
         "next_end": "2026-11-01",
         "last_activity": "2026-02-16",
-        "days_since_contact": 197,
+        "days_since_contact": 203,
         "monthly_amount": 199663,
         "agency": "0012w00000LgVC5AAN"
-      },
-      {
-        "name": "医療法人愛広会",
-        "sf_account_id": "0012w00000vKWRLAA4",
-        "plan": "プレミアムプラン",
-        "next_end": "2026-09-01",
-        "last_activity": null,
-        "days_since_contact": 9999,
-        "monthly_amount": 194400,
-        "agency": ""
-      },
-      {
-        "name": "島津サイエンス株式会社",
-        "sf_account_id": "001Q800000U123KIAR",
-        "plan": "プレミアムプラン",
-        "next_end": "2026-09-01",
-        "last_activity": null,
-        "days_since_contact": 9999,
-        "monthly_amount": 194400,
-        "agency": ""
       },
       {
         "name": "株式会社サカタのタネ",
@@ -485,11 +520,11 @@
       }
     ]
   },
-  "total_companies": 205,
-  "generated_at": "2026-09-01T18:16:25.852629",
+  "total_companies": 7155,
+  "generated_at": "2026-09-07T06:28:52.655601",
   "slack_messages": {
-    "surge": "<!channel>\n:chart_with_upwards_trend: *高使用率帯で急増* (2026-08-31)\n比較期間: 2026-08-24 → 2026-08-31 | 検出: 1 件\n条件: 使用率80%以上 かつ +5pt以上 かつ +20GB以上\n\n  • *<https://directcloud.my.salesforce.com/0012w00000HYm20AAD|株式会社インターウェーブ（DCB1700233）>* — +29.12GB / +5.8pt (93.0% → 98.8%)  [493.97/500.0GB]",
-    "churn_risk": "<!channel>\n:chart_with_downwards_trend: *使用量の大きな減少（フォロー対象）* (2026-08-31)\n比較期間: 2026-08-24 → 2026-08-31 | 検出: 1 件\n条件: 使用率50%以上から -10pt以上 かつ -20GB以上\n\n  • *<https://directcloud.my.salesforce.com/0012w00000HYm0WAAT|株式会社インデックスコンサルティング>* — -79.78GB / -13.3pt (68.0% → 54.7%)  [328.13/600.0GB]\n\n:bar_chart: <https://prod-apnortheast-a.online.tableau.com/#/site/directcloud/workbooks/4681647|Tableauダッシュボードで詳細確認>",
-    "renewal_risk": "<!channel>\n:warning: *更新前で接点が空いている先（重点フォロー対象）* (2026-09-01)\n更新3ヶ月以内 × 直近90日間 電話・商談・打合せ・訪問等の活動なし × エンタープライズ/プレミアム | 検出: 45 件\n\n  • *<https://directcloud.my.salesforce.com/0012w00000awyhxAAA|MS&ADシステムズ株式会社（DCB2402449-040）>* — エンタープライズ / ¥3,360,000/月 / 更新: 2026-10-01 / 最終接触: 記録なし\n  • *<https://directcloud.my.salesforce.com/001Q8000015yCCbIAM|株式会社北電子（DCB2502715-040）>* — エンタープライズ / ¥1,460,000/月 / 更新: 2026-11-01 / 最終接触: 記録なし\n  • *<https://directcloud.my.salesforce.com/001Q800000MUa2zIAD|公益財団法人東京しごと財団>* — エンタープライズ / ¥360,000/月 / 更新: 2026-09-01 / 最終接触: 201日前\n  • *<https://directcloud.my.salesforce.com/001BB000002eKjlYAE|農林中金全共連アセットマネジメント株式会社>* — エンタープライズ / ¥360,000/月 / 更新: 2026-10-01 / 最終接触: 記録なし\n  • *<https://directcloud.my.salesforce.com/001BB000003eTNuYAM|株式会社明光ネットワークジャパン>* — エンタープライズ / ¥360,000/月 / 更新: 2026-11-01 / 最終接触: 95日前\n  • *<https://directcloud.my.salesforce.com/001Q8000016bb6SIAQ|株式会社トーガシ>* — エンタープライズ / ¥360,000/月 / 更新: 2026-11-01 / 最終接触: 196日前\n  • *<https://directcloud.my.salesforce.com/0012w00000fTaeAAAS|日本赤十字社（DCB2101272-021）>* — エンタープライズ / ¥320,000/月 / 更新: 2026-09-01 / 最終接触: 記録なし\n  • *<https://directcloud.my.salesforce.com/001Q80000053sKLIAY|パナソニックエイジフリー株式会社>* — エンタープライズ / ¥300,000/月 / 更新: 2026-11-01 / 最終接触: 237日前\n  • *<https://directcloud.my.salesforce.com/0012w00000hh1kTAAQ|浅海電気株式会社>* — エンタープライズ / ¥198,000/月 / 更新: 2026-09-01 / 最終接触: 記録なし\n  • *<https://directcloud.my.salesforce.com/001BB000003x7IqYAI|MS&ADシステムズ株式会社（DCB2201693-040）>* — プレミアム / ¥4,216,000/月 / 更新: 2026-10-01 / 最終接触: 記録なし\n  … 他 35 件"
+    "surge": "<!channel>\n:chart_with_upwards_trend: *高使用率帯で急増* (2026-09-06)\n比較期間: 2026-08-30 → 2026-09-06 | 検出: 2 件\n条件: 使用率80%以上 かつ +5pt以上 かつ +20GB以上\n\n  • *<https://directcloud.my.salesforce.com/0012w00000HYmKGAA1|日本臓器製薬株式会社>* — +43.07GB / +8.6pt (97.2% → 105.8%)  [529.14/500.0GB]\n  • *<https://directcloud.my.salesforce.com/0012w00000HYm5yAAD|クオリティソフト株式会社>* — +24.58GB / +5.0pt (93.8% → 98.8%)  [493.77/500.0GB]",
+    "churn_risk": "<!channel>\n:chart_with_downwards_trend: *使用量の大きな減少（フォロー対象）* (2026-09-06)\n比較期間: 2026-08-30 → 2026-09-06 | 検出: 5 件\n条件: 使用率50%以上から -10pt以上 かつ -20GB以上\n\n  • *<https://directcloud.my.salesforce.com/0012w00000HYmGxAAL|鬼頭工業株式会社>* — -476.49GB / -95.3pt (100.5% → 5.2%)  [25.81/500.0GB]\n  • *<https://directcloud.my.salesforce.com/0012w00000HYmEoAAL|大東食研株式会社>* — -188.09GB / -37.6pt (116.8% → 79.2%)  [395.9/500.0GB]\n  • *<https://directcloud.my.salesforce.com/001BB000002SHxaYAG|株式会社DMM FinTech>* — -304.84GB / -29.8pt (74.4% → 44.6%)  [456.69/1024.0GB]\n  • *<https://directcloud.my.salesforce.com/0012w00000HYmF2AAL|株式会社サボハニ>* — -243.2GB / -23.7pt (81.4% → 57.7%)  [590.63/1024.0GB]\n  • *<https://directcloud.my.salesforce.com/001Q800000APGC3IAP|第三化成株式会社>* — -646.78GB / -21.1pt (71.0% → 49.9%)  [1533.2/3072.0GB]\n\n:bar_chart: <https://prod-apnortheast-a.online.tableau.com/#/site/directcloud/workbooks/4681647|Tableauダッシュボードで詳細確認>",
+    "renewal_risk": "<!channel>\n:warning: *更新前で接点が空いている先（重点フォロー対象）* (2026-09-07)\n更新3ヶ月以内 × 直近90日間 電話・商談・打合せ・訪問等の活動なし × エンタープライズ/プレミアム | 検出: 42 件\n\n  • *<https://directcloud.my.salesforce.com/0012w00000awyhxAAA|MS&ADシステムズ株式会社（DCB2402449-040）>* — エンタープライズ / ¥3,360,000/月 / 更新: 2026-10-01 / 最終接触: 記録なし\n  • *<https://directcloud.my.salesforce.com/001Q8000015yCCbIAM|株式会社北電子（DCB2502715-040）>* — エンタープライズ / ¥1,460,000/月 / 更新: 2026-11-01 / 最終接触: 記録なし\n  • *<https://directcloud.my.salesforce.com/0012w00000HYmEXAA1|株式会社SHIFT（DCB1800369）>* — エンタープライズ / ¥432,000/月 / 更新: 2026-12-01 / 最終接触: 記録なし\n  • *<https://directcloud.my.salesforce.com/001BB000002wR5tYAE|国土開発工業株式会社>* — エンタープライズ / ¥432,000/月 / 更新: 2026-12-01 / 最終接触: 記録なし\n  • *<https://directcloud.my.salesforce.com/001Q800000Dyz7aIAB|株式会社ヤナセ>* — エンタープライズ / ¥432,000/月 / 更新: 2026-12-01 / 最終接触: 348日前\n  • *<https://directcloud.my.salesforce.com/001BB000002eKjlYAE|農林中金全共連アセットマネジメント株式会社>* — エンタープライズ / ¥360,000/月 / 更新: 2026-10-01 / 最終接触: 記録なし\n  • *<https://directcloud.my.salesforce.com/001BB000003eTNuYAM|株式会社明光ネットワークジャパン>* — エンタープライズ / ¥360,000/月 / 更新: 2026-11-01 / 最終接触: 101日前\n  • *<https://directcloud.my.salesforce.com/001Q8000016bb6SIAQ|株式会社トーガシ>* — エンタープライズ / ¥360,000/月 / 更新: 2026-11-01 / 最終接触: 202日前\n  • *<https://directcloud.my.salesforce.com/001Q80000053sKLIAY|パナソニックエイジフリー株式会社>* — エンタープライズ / ¥300,000/月 / 更新: 2026-11-01 / 最終接触: 243日前\n  • *<https://directcloud.my.salesforce.com/001BB000005mAvNYAU|株式会社プロスパイラ>* — エンタープライズ / ¥288,000/月 / 更新: 2026-12-01 / 最終接触: 298日前\n  … 他 32 件"
   }
 }
